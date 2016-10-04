@@ -17,6 +17,8 @@ namespace Hotel_Management.Models
         [Display(Name = "Last Name")]
         public string StaffLastName { get; set; }
 
+        //FullName string is computed
+
         [Display(Name = "Address")]
         public string StaffAddress { get; set; }
 
@@ -41,7 +43,7 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One hotel has many staff
         //These two lines represent the many side
-        //int? makes it optional (or able to be null) which is helpful when we key in the input - not a strict represntation of our ERD
+        //int? makes it optional (or able to be null) which is helpful when we key in the input - not a strict representation of our ERD
         public int? HotelID { get; set; }
         public virtual Hotel Hotel { get; set; }
 

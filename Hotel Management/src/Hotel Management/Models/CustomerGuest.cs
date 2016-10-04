@@ -17,6 +17,8 @@ namespace Hotel_Management.Models
         [Display(Name = "Last Name")]
         public string CustomerLastName { get; set; }
 
+        //FullName string is computed
+
         [Display(Name = "Address")]
         public string CustomerAddress { get; set; }
 
@@ -49,5 +51,9 @@ namespace Hotel_Management.Models
         //one to Many Relationship. One Guest can have many Alarms
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<Alarm> Alarm { get; set; }
+
+        //one to Many Relationship. One Customer can have many Bookings
+        //This is the 'one' side of the code required for that relationship
+        public virtual ICollection<Booking> Booking { get; set; }
     }
 }
