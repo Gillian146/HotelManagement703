@@ -26,5 +26,7 @@ namespace Hotel_Management.Models
         public int? HotelID { get; set; }
         public virtual Hotel Hotel { get; set; }
 
+        //testing to see if this shows up
+
     }
 }
