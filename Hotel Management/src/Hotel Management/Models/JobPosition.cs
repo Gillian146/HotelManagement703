@@ -7,23 +7,22 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Hotel_Management.Models
 {
-    public class Hotel
+    public class JobPosition
     {
         public int ID { get; set; }
 
         [Display(Name = "Name")]
-        public string HotelName { get; set; }
+        public string JobPositionName { get; set; }
 
-        [Display(Name = "Street Address")]
-        public string HotelStreetAddress { get; set; }
+        [Display(Name = "Hourly Rate")]
+        public string JobPositionHourlyRate { get; set; }
 
-        [Display(Name = "Postal Address")]
-        public string HotelPostalAddress { get; set; }
+        [Display(Name = "Job Description")]
+        public string JobDescription { get; set; }
 
-        [Display(Name = "City")]
-        public string HotelCity { get; set; }
+       
 
-        //one to Many Relationship. One hotel has many staff
+        //one to Many Relationship. One JobPosition could be held by many staff
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<Staff> Staff { get; set; }
 

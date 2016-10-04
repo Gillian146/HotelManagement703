@@ -10,6 +10,7 @@ namespace Hotel_Management.Models
     public class Staff
     {
         public int ID { get; set; }
+
         [Display (Name = "First Name")]
         public string StaffFirstName { get; set; }
 
@@ -43,5 +44,11 @@ namespace Hotel_Management.Models
         //int? makes it optional (or able to be null) which is helpful when we key in the input - not a strict represntation of our ERD
         public int? HotelID { get; set; }
         public virtual Hotel Hotel { get; set; }
+
+        //one to Many Relationship. One hotel has many staff
+        //These two lines represent the many side
+        public int? JobPositionID { get; set; }
+        public virtual JobPosition JobPosition { get; set; }
     }
+
 }
