@@ -1,0 +1,323 @@
+/*
+Created		2/10/2016
+Modified		2/10/2016
+Project		
+Model		
+Company		
+Author		
+Version		
+Database		MS SQL 7 
+*/
+
+
+Create table [Hotel] (
+	[HotelID] Integer NOT NULL,
+	[Name] Nvarchar(20) NULL,
+	[StreetAddress] Nvarchar(50) NULL,
+	[PostalAddress] Nvarchar(50) NULL,
+	[City] Nvarchar(20) NULL
+) 
+go
+
+Create table [Staff] (
+	[StaffID] Integer NOT NULL,
+	[HotelID] Integer NOT NULL,
+	[JobPositionID] Integer NOT NULL,
+	[StaffFirstName] Nvarchar(20) NULL,
+	[StaffLastName] Nvarchar(20) NULL,
+	[StaffAddress] Nvarchar(50) NULL,
+	[StaffCity] Nvarchar(50) NULL,
+	[StaffCellPhoneNumber] Nvarchar(15) NULL,
+	[StaffHomePhone] Integer NULL,
+	[StaffEmailAddress] Nvarchar(50) NULL,
+	[StaffPhoto] Binary(10) NULL
+) 
+go
+
+Create table [JobPosition] (
+	[JobPositionID] Integer NOT NULL,
+	[Position] Nvarchar(20) NULL,
+	[HourlyRate] Decimal(5,2) NULL,
+	[JobDescription] Text NULL
+) 
+go
+
+Create table [Floors] (
+	[FloorID] Integer NOT NULL,
+	[HotelID] Integer NOT NULL,
+	[FloorNumber] Integer NULL,
+	[FloorName] Nvarchar(20) NULL
+) 
+go
+
+Create table [Rooms] (
+	[RoomNumber] Integer NOT NULL,
+	[FloorID] Integer NOT NULL,
+	[RoomName] Nvarchar(10) NULL,
+	[Rate] Decimal(5,2) NULL,
+	[RoomTypeName] Nvarchar(10) NOT NULL
+) 
+go
+
+Create table [FloorResponsibilities] (
+	[FloorResponsibilitiesID] Integer NOT NULL,
+	[JobPositionID] Integer NOT NULL,
+	[FloorID] Integer NOT NULL
+) 
+go
+
+Create table [Carparks] (
+	[CarparkID] Integer NOT NULL,
+	[CarparkNumber] Integer NULL,
+	[CarparkName] Nvarchar(20) NULL,
+	[CarparkLocation] Nvarchar(50) NULL,
+	[HotelID] Integer NOT NULL
+) 
+go
+
+Create table [Availability] (
+	[AvailabilityID] Integer NOT NULL,
+	[AvailabilityStatus] Bit NULL
+) 
+go
+Exec sp_bindefault 'ai', 'Availability.AvailabilityID'
+go
+
+Create table [State] (
+	[StateID] Integer NOT NULL,
+	[StateDescription] Nvarchar(20) NULL
+) 
+go
+
+Create table [RoomAvailability] (
+	[RmAvailabilityID] Integer NOT NULL,
+	[AvailabilityID] Integer NOT NULL,
+	[Date] Datetime NULL,
+	[RoomNumber] Integer NOT NULL
+) 
+go
+
+Create table [CarParkAvailability] (
+	[CPAvailabilityID] Integer NOT NULL,
+	[AvailabilityID] Integer NOT NULL,
+	[CarparkID] Integer NOT NULL,
+	[Date] Datetime NULL
+) 
+go
+
+Create table [UserInfo] (
+	[UserID] Integer NOT NULL UNIQUE,
+	[Username] Nvarchar(10) NULL UNIQUE,
+	[Password] Nvarchar(8) NULL,
+	[StaffID] Integer NOT NULL,
+	[AuthorisationLevelID] Integer NOT NULL
+) 
+go
+
+Create table [AuthorisationLevel] (
+	[AuthorisationLevelID] Integer NOT NULL,
+	[AuthorisationLevelName] Nvarchar(20) NULL,
+	[AuthorisationLevelNumber] Integer NULL
+) 
+go
+
+Create table [CustomerGuest] (
+	[CustomerID] Integer NOT NULL,
+	[AgencyID] Integer NULL,
+	[CustomerFirstName] Nvarchar(20) NULL,
+	[CustomerLastName] Nvarchar(20) NULL,
+	[CustomerAddress] Nvarchar(50) NULL,
+	[CustomerCity] Nvarchar(20) NULL,
+	[CustomerCellPhone] Nvarchar(20) NULL,
+	[CustomerHomePhone] Nvarchar(20) NULL,
+	[CustomerEmail] Nvarchar(50) NULL,
+	[CustomerNotes] Nvarchar(255) NULL,
+	[CustomerPreferencez] Nvarchar(255) NULL
+) 
+go
+
+Create table [Booking] (
+	[BookingID] Integer NOT NULL,
+	[CarparkID] Integer NOT NULL,
+	[AgencyID] Integer NULL,
+	[CreditCardNumber] Nvarchar(16) NOT NULL,
+	[InvoiceID] Integer NULL,
+	[CustomerID] Integer NULL,
+	[RoomNumber] Integer NOT NULL,
+	[DateofBooking] Datetime NULL,
+	[ArrivalDate] Datetime NULL,
+	[DepartureDate] Datetime NULL,
+	[NumberOfNights] Integer NULL,
+	[BookingQuote] Decimal(5,2) NULL,
+	[BookingNotes] Nvarchar(255) NULL,
+	[BookingMethod] Nvarchar(40) NULL
+) 
+go
+
+Create table [RoomType] (
+	[RoomTypeID] Integer NOT NULL UNIQUE,
+	[RoomTypeName] Nvarchar(10) NOT NULL,
+	[RoomTypeNotes] Nvarchar(255) NULL
+) 
+go
+
+Create table [BedType] (
+	[BedTypeID] Integer NOT NULL,
+	[BedTypeName] Nvarchar(20) NULL,
+	[BedTypeNotes] Nvarchar(255) NULL
+) 
+go
+
+Create table [BedToRoom] (
+	[BedToRoom] Integer NOT NULL,
+	[Quantity] Integer NULL,
+	[BedTypeID] Integer NOT NULL,
+	[RoomTypeName] Nvarchar(10) NOT NULL
+) 
+go
+
+Create table [Payment] (
+	[ReceiptID] Integer NOT NULL UNIQUE,
+	[PaymentMethodID] Integer NOT NULL,
+	[CustomerID] Integer NULL,
+	[TotalPaid] Decimal(5,2) NULL,
+	[DatePaid] Datetime NULL,
+	[PaymentNotes] Nvarchar(255) NULL,
+	[InvoiceID] Integer NOT NULL
+) 
+go
+
+Create table [Invoice] (
+	[InvoiceID] Integer NOT NULL UNIQUE,
+	[TotalDue] Decimal(5,2) NULL,
+	[DatePrepared] Datetime NULL,
+	[GST] Decimal(5,2) NULL,
+	[GSTRate] Decimal(5,1) NULL,
+	[SendMethod] Nvarchar(20) NULL
+) 
+go
+
+Create table [PaymentMethod] (
+	[PaymentMethodID] Integer NOT NULL,
+	[PaymentMethodName] Nvarchar(20) NULL
+) 
+go
+
+Create table [CreditCardDetails] (
+	[CreditCardNumber] Nvarchar(16) NOT NULL UNIQUE,
+	[CreditCardType] Nvarchar(20) NULL,
+	[CreditCardExpiryMonth] Integer NULL,
+	[CreditCardExpiryYear] Integer NULL,
+	[CreditCardName] Nvarchar(50) NULL,
+	[CreditCardCVC] Integer NULL,
+	[CreditCardNotes] Nvarchar(255) NULL
+) 
+go
+
+Create table [ChargeBack] (
+	[ChargeBackID] Integer NOT NULL,
+	[ChargeBackLocation] Nvarchar(20) NULL,
+	[ChargeBackTotal] Decimal(5,2) NULL,
+	[InvoiceID] Integer NOT NULL
+) 
+go
+
+Create table [Agency-Company] (
+	[AgencyID] Integer NOT NULL,
+	[AgencyName] Nvarchar(50) NULL,
+	[AgencyLocation] Nvarchar(20) NULL,
+	[AgencyPhone] Nvarchar(20) NULL,
+	[AgencyContactPerson] Nvarchar(20) NULL
+) 
+go
+
+Create table [MessageAlert] (
+	[MessageAlertID] Integer NOT NULL,
+	[MessageAlertDateReceived] Datetime NULL,
+	[MessageAlertNotes] Nvarchar(255) NULL,
+	[MessageAlertActive] Bit NULL,
+	[MessageAlertStatus] Nvarchar(20) NULL,
+	[CustomerID] Integer NOT NULL
+) 
+go
+
+Create table [AlarmCall] (
+	[AlarmCallID] Integer NOT NULL,
+	[CustomerID] Integer NOT NULL,
+	[AlarmCallDateReceived] Datetime NULL,
+	[AlarmCallDate] Datetime NULL,
+	[AlarmCallTime] Datetime NULL,
+	[AlarmCallNotes] Nvarchar(255) NULL,
+	[AlarmCallActive] Bit NULL,
+	[AlarmCallStatus] Nvarchar(20) NULL
+) 
+go
+
+
+Alter table [Staff] add  foreign key([HotelID]) references [Hotel] ([HotelID]) 
+go
+Alter table [Floors] add  foreign key([HotelID]) references [Hotel] ([HotelID]) 
+go
+Alter table [Carparks] add  foreign key([HotelID]) references [Hotel] ([HotelID]) 
+go
+Alter table [UserInfo] add  foreign key([StaffID]) references [Staff] ([StaffID]) 
+go
+Alter table [Staff] add  foreign key([JobPositionID]) references [JobPosition] ([JobPositionID]) 
+go
+Alter table [FloorResponsibilities] add  foreign key([JobPositionID]) references [JobPosition] ([JobPositionID]) 
+go
+Alter table [Rooms] add  foreign key([FloorID]) references [Floors] ([FloorID]) 
+go
+Alter table [FloorResponsibilities] add  foreign key([FloorID]) references [Floors] ([FloorID]) 
+go
+Alter table [RoomAvailability] add  foreign key([RoomNumber]) references [Rooms] ([RoomNumber]) 
+go
+Alter table [Booking] add  foreign key([RoomNumber]) references [Rooms] ([RoomNumber]) 
+go
+Alter table [CarParkAvailability] add  foreign key([CarparkID]) references [Carparks] ([CarparkID]) 
+go
+Alter table [Booking] add  foreign key([CarparkID]) references [Carparks] ([CarparkID]) 
+go
+Alter table [RoomAvailability] add  foreign key([AvailabilityID]) references [Availability] ([AvailabilityID]) 
+go
+Alter table [CarParkAvailability] add  foreign key([AvailabilityID]) references [Availability] ([AvailabilityID]) 
+go
+Alter table [UserInfo] add  foreign key([AuthorisationLevelID]) references [AuthorisationLevel] ([AuthorisationLevelID]) 
+go
+Alter table [Booking] add  foreign key([CustomerID]) references [CustomerGuest] ([CustomerID]) 
+go
+Alter table [Payment] add  foreign key([CustomerID]) references [CustomerGuest] ([CustomerID]) 
+go
+Alter table [MessageAlert] add  foreign key([CustomerID]) references [CustomerGuest] ([CustomerID]) 
+go
+Alter table [AlarmCall] add  foreign key([CustomerID]) references [CustomerGuest] ([CustomerID]) 
+go
+Alter table [Rooms] add  foreign key([RoomTypeName]) references [RoomType] ([RoomTypeName]) 
+go
+Alter table [BedToRoom] add  foreign key([RoomTypeName]) references [RoomType] ([RoomTypeName]) 
+go
+Alter table [BedToRoom] add  foreign key([BedTypeID]) references [BedType] ([BedTypeID]) 
+go
+Alter table [Booking] add  foreign key([InvoiceID]) references [Invoice] ([InvoiceID]) 
+go
+Alter table [Payment] add  foreign key([InvoiceID]) references [Invoice] ([InvoiceID]) 
+go
+Alter table [ChargeBack] add  foreign key([InvoiceID]) references [Invoice] ([InvoiceID]) 
+go
+Alter table [Payment] add  foreign key([PaymentMethodID]) references [PaymentMethod] ([PaymentMethodID]) 
+go
+Alter table [Booking] add  foreign key([CreditCardNumber]) references [CreditCardDetails] ([CreditCardNumber]) 
+go
+Alter table [Booking] add  foreign key([AgencyID]) references [Agency-Company] ([AgencyID]) 
+go
+Alter table [CustomerGuest] add  foreign key([AgencyID]) references [Agency-Company] ([AgencyID]) 
+go
+
+
+Set quoted_identifier on
+go
+
+Set quoted_identifier off
+go
+
+
