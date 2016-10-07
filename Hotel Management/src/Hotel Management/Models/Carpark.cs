@@ -26,7 +26,9 @@ namespace Hotel_Management.Models
         public int? HotelID { get; set; }
         public virtual Hotel Hotel { get; set; }
 
-        //testing to see if this shows up
+        //one to Many Relationship. One carpark can have many Availabilities on different dates
+        //This is the 'one' side of the code required for that relationship
+        public virtual ICollection<CarParkAvailability> CarParkAvailability { get; set; }
 
     }
 }

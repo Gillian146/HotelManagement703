@@ -37,7 +37,9 @@ namespace Hotel_Management.Models
         [Display(Name = "Email")]
         public string CustomerEmail { get; set; }
 
-  
+        //still need relationship with Carpark???
+
+
         //one to Many Relationship. One Agency can have many Customer
         //These two lines represent the many side
         //int? makes it optional (or able to be null) which is helpful when we key in the input - not a strict represntation of our ERD
@@ -55,5 +57,9 @@ namespace Hotel_Management.Models
         //one to Many Relationship. One Customer can have many Bookings
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<Booking> Booking { get; set; }
+
+        //one to Many Relationship. One Guest can have many ChargeBacks
+        //This is the 'one' side of the code required for that relationship
+        public virtual ICollection<ChargeBack> ChargeBack { get; set; }
     }
 }

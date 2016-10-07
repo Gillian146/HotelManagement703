@@ -17,11 +17,27 @@ namespace Hotel_Management.Models
 
         //Number of Mights is computed
 
+            //still need relationship with Carpark???
+
         //one to Many Relationship. One Customer can have many Bookings
         //These two lines represent the many side
         public int? CustomerGuestID { get; set; }
         public virtual CustomerGuest CustomerGuest { get; set; }
 
+        //one to Many Relationship. One CreditCard can be used for many Bookings
+        //These two lines represent the many side
+        public int? CreditCardDetailsID { get; set; }
+        public virtual CreditCardDetails CreditCardDetails { get; set; }
+
+        //one to Many Relationship. One Invoice can have many Bookings
+        //These two lines represent the many side
+        public int? InvoiceID { get; set; }
+        public virtual Invoice Invoice { get; set; }
+
+        //one to Many Relationship. One Room can have many Bookings
+        //These two lines represent the many side
+        public int? RoomID { get; set; }
+        public virtual Room Room { get; set; }
 
     }
 }

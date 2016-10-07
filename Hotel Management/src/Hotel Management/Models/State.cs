@@ -7,5 +7,7 @@ namespace Hotel_Management.Models
 {
     public class State
     {
+        public int ID { get; set; }
+        public String StateDescription { get; set; }
     }
 }
