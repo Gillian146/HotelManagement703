@@ -45,10 +45,10 @@ namespace Hotel_Management.Controllers
         // GET: Booking/Create
         public IActionResult Create()
         {
-            ViewData["CreditCardDetailsID"] = new SelectList(_context.Set<CreditCardDetails>(), "ID", "CreditCardDetails");
-            ViewData["CustomerGuestID"] = new SelectList(_context.Set<CustomerGuest>(), "ID", "CustomerGuest");
-            ViewData["InvoiceID"] = new SelectList(_context.Set<Invoice>(), "ID", "Invoice");
-            ViewData["RoomID"] = new SelectList(_context.Set<Room>(), "ID", "Room");
+            //ViewData["CreditCardDetailsID"] = new SelectList(_context.Set<CreditCardDetails>(), "ID", "CreditCardDetails");
+            ViewData["GuestID"] = new SelectList(_context.CustomerGuest.OrderBy(d => d.CustomerLastName), "ID", "CustomerFullName");
+           // ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice");
+            ViewData["RoomID"] = new SelectList(_context.Room, "ID", "RoomNumber");
             return View();
         }
 

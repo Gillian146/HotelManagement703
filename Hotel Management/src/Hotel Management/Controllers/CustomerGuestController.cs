@@ -42,7 +42,7 @@ namespace Hotel_Management.Controllers
         // GET: CustomerGuest/Create
         public IActionResult Create()
         {
-            ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "Agency");
+            ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "AgencyName");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace Hotel_Management.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "Agency", customerGuest.AgencyID);
+            ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "AgencyName");
             return View(customerGuest);
         }
 
@@ -74,7 +74,8 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "Agency", customerGuest.AgencyID);
+         
+            ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "AgencyName", customerGuest.AgencyID);
             return View(customerGuest);
         }
 

@@ -12,24 +12,10 @@
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="AgencyAddress" class="col-md-2 control-label"></label>
+            <label asp-for="AgencyName" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="AgencyAddress" class="form-control" />
-                <span asp-validation-for="AgencyAddress" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="AgencyCellPhoneNumber" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="AgencyCellPhoneNumber" class="form-control" />
-                <span asp-validation-for="AgencyCellPhoneNumber" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="AgencyCity" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="AgencyCity" class="form-control" />
-                <span asp-validation-for="AgencyCity" class="text-danger" />
+                <input asp-for="AgencyName" class="form-control" />
+                <span asp-validation-for="AgencyName" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -40,17 +26,10 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="AgencyEmail" class="col-md-2 control-label"></label>
+            <label asp-for="AgencyAddress" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="AgencyEmail" class="form-control" />
-                <span asp-validation-for="AgencyEmail" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="AgencyName" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="AgencyName" class="form-control" />
-                <span asp-validation-for="AgencyName" class="text-danger" />
+                <input asp-for="AgencyAddress" class="form-control" />
+                <span asp-validation-for="AgencyAddress" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -61,12 +40,34 @@
             </div>
         </div>
         <div class="form-group">
+            <label asp-for="AgencyCity" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyCity" class="form-control" />
+                <span asp-validation-for="AgencyCity" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AgencyCellPhoneNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyCellPhoneNumber" class="form-control" />
+                <span asp-validation-for="AgencyCellPhoneNumber" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
             <label asp-for="AgencyWorkPhone" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="AgencyWorkPhone" class="form-control" />
                 <span asp-validation-for="AgencyWorkPhone" class="text-danger" />
             </div>
         </div>
+        <div class="form-group">
+            <label asp-for="AgencyEmail" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyEmail" class="form-control" />
+                <span asp-validation-for="AgencyEmail" class="text-danger" />
+            </div>
+        </div>     
+       
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

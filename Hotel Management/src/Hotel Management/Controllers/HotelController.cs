@@ -14,6 +14,10 @@ namespace Hotel_Management.Controllers
         {
             _context = context;    
         }
+        public IActionResult Backup()
+        {
+            return View();
+        }
 
         // GET: Hotel
         public IActionResult Index()

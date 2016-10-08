@@ -2,61 +2,21 @@
 
 @{
     ViewData["Title"] = "Create";
+    var AgencyID = (IEnumerable<SelectListItem>)ViewData["AgencyID"];
 }
 
 <h2>Create</h2>
 
 <form asp-action="Create">
     <div class="form-horizontal">
-        <h4>CustomerGuest</h4>
+        <h4>New Guest</h4>
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="AgencyID" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <select asp-for="AgencyID" class ="form-control"></select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CustomerAddress" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CustomerAddress" class="form-control" />
-                <span asp-validation-for="CustomerAddress" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CustomerCellPhoneNumber" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CustomerCellPhoneNumber" class="form-control" />
-                <span asp-validation-for="CustomerCellPhoneNumber" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CustomerCity" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CustomerCity" class="form-control" />
-                <span asp-validation-for="CustomerCity" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CustomerEmail" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CustomerEmail" class="form-control" />
-                <span asp-validation-for="CustomerEmail" class="text-danger" />
-            </div>
-        </div>
         <div class="form-group">
             <label asp-for="CustomerFirstName" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="CustomerFirstName" class="form-control" />
                 <span asp-validation-for="CustomerFirstName" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CustomerHomePhone" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CustomerHomePhone" class="form-control" />
-                <span asp-validation-for="CustomerHomePhone" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -67,6 +27,13 @@
             </div>
         </div>
         <div class="form-group">
+            <label asp-for="CustomerAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerAddress" class="form-control" />
+                <span asp-validation-for="CustomerAddress" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
             <label asp-for="CustomerSuburb" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="CustomerSuburb" class="form-control" />
@@ -74,8 +41,50 @@
             </div>
         </div>
         <div class="form-group">
+            <label asp-for="CustomerCity" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerCity" class="form-control" />
+                <span asp-validation-for="CustomerCity" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerCellPhoneNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerCellPhoneNumber" class="form-control" />
+                <span asp-validation-for="CustomerCellPhoneNumber" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CustomerHomePhone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerHomePhone" class="form-control" />
+                <span asp-validation-for="CustomerHomePhone" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerEmail" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerEmail" class="form-control" />
+                <span asp-validation-for="CustomerEmail" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="col-md-2 control-label">Agency Name (optional)</label>
+            <div class="col-md-9">
+                <select asp-for="AgencyID" asp-items="AgencyID" class="form-control">
+                    <option></option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-4 col-md-1">
+                <a href="/Agency/Create" class="btn btn-default"><i class="glyphicon glyphicon-option-horizontal"></i></a>
+            </div>
+        </div>
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </div>
     </div>
