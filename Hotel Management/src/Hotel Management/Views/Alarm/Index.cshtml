@@ -1,0 +1,62 @@
+@model IEnumerable<Hotel_Management.Models.Alarm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AlarmAlertNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlarmDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlarmDateReceived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlarmDelivered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlarmTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlarmTitle)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlarmAlertNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlarmDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlarmDateReceived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlarmDelivered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlarmTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlarmTitle)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+        </td>
+    </tr>
+}
+</table>

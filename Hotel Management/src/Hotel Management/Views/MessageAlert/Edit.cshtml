@@ -1,0 +1,81 @@
+@model Hotel_Management.Models.MessageAlert
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>MessageAlert</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="CMessageAlertNotes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CMessageAlertNotes" class="form-control" />
+                <span asp-validation-for="CMessageAlertNotes" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerGuestID" class="control-label col-md-2">CustomerGuestID</label>
+            <div class="col-md-10">
+                <select asp-for="CustomerGuestID" class="form-control" />
+                <span asp-validation-for="CustomerGuestID" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MessageAlertDateDelivered" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MessageAlertDateDelivered" class="form-control" />
+                <span asp-validation-for="MessageAlertDateDelivered" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MessageAlertDateReceived" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MessageAlertDateReceived" class="form-control" />
+                <span asp-validation-for="MessageAlertDateReceived" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="MessageAlertDelivered" />
+                    <label asp-for="MessageAlertDelivered"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MessageAlertMessage" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MessageAlertMessage" class="form-control" />
+                <span asp-validation-for="MessageAlertMessage" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MessageAlertTitle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MessageAlertTitle" class="form-control" />
+                <span asp-validation-for="MessageAlertTitle" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

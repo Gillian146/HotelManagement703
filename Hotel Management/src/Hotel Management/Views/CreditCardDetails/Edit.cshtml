@@ -1,0 +1,73 @@
+@model Hotel_Management.Models.CreditCardDetails
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>CreditCardDetails</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="CreditCardCVC" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreditCardCVC" class="form-control" />
+                <span asp-validation-for="CreditCardCVC" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CreditCardExpiryMonth" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreditCardExpiryMonth" class="form-control" />
+                <span asp-validation-for="CreditCardExpiryMonth" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CreditCardExpiryYear" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreditCardExpiryYear" class="form-control" />
+                <span asp-validation-for="CreditCardExpiryYear" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CreditCardName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreditCardName" class="form-control" />
+                <span asp-validation-for="CreditCardName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CreditCardNotes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreditCardNotes" class="form-control" />
+                <span asp-validation-for="CreditCardNotes" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CreditCardNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreditCardNumber" class="form-control" />
+                <span asp-validation-for="CreditCardNumber" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

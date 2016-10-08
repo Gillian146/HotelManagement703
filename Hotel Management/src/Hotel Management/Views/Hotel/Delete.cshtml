@@ -1,0 +1,46 @@
+@model Hotel_Management.Models.Hotel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Hotel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelCity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HotelCity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HotelName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelPostalAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HotelPostalAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelStreetAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HotelStreetAddress)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

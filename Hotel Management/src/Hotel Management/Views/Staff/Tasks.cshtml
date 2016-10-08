@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">New Staff</h3>
+        <a asp-controller="Staff" asp-action="Create" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-user g glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6 ">
+        <h3 class="text-center">Edit Staff</h3>
+        <a asp-controller="Staff" asp-action="Index" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-edit glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">New Job Description</h3>
+        <a asp-controller="JobPosition" asp-action="Create" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-copy glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Edit Job Descriptions</h3>
+        <a asp-controller="JobPosition" asp-action="Index" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-pencil glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">New Hotel</h3>
+        <a asp-controller="Hotel" asp-action="Create" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-header glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6 ">
+        <h3 class="text-center">Add Rooms</h3>
+        <a asp-controller="Room" asp-action="Create" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-lamp glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Edit Rooms</h3>
+        <a asp-controller="Room" asp-action="Index" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-bed glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Edit Floors</h3>
+        <a asp-controller="Floors" asp-action="Index" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-menu-hamburger glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+
+</div>
+<div class="row">
+
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Backup System</h3>
+        <a asp-controller="Payment" asp-action="Create" class="btn btn-danger btn-block">
+            <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6 ">
+        <h3 class="text-center">End of Day Reports</h3>
+        <a asp-controller="Invoice" asp-action="Index" class="btn btn-warning btn-block">
+            <span class="glyphicon glyphicon-check glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Housekeeping Reports</h3>
+        <a asp-controller="ChargeBack" asp-action="Create" class="btn btn-warning btn-block">
+            <span class="glyphicon glyphicon-bell glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Maintenance Reports</h3>
+        <a asp-controller="CreditCardDetails" asp-action="Create" class="btn btn-warning btn-block">
+            <span class="glyphicon glyphicon-wrench glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+
+</div>

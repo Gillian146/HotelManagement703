@@ -1,0 +1,54 @@
+@model Hotel_Management.Models.Alarm
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Alarm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AlarmAlertNotes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlarmAlertNotes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlarmDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlarmDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlarmDateReceived)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlarmDateReceived)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlarmDelivered)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlarmDelivered)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlarmTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlarmTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlarmTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlarmTitle)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>

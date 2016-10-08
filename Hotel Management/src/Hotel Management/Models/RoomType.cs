@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Authorization;
+using System.ComponentModel.DataAnnotations;
 
 namespace Hotel_Management.Models
 {
     public class RoomType
     {
         public int ID { get; set; }
+
+        [Display(Name = "Room Type")]
         public string  RoomTypeName { get; set; }
+
+        [Display(Name = "Room Type Notes")]
         public int RoomTypeNotes { get; set; }
 
         //one to Many Relationship. One Floor can have many RoomTypes

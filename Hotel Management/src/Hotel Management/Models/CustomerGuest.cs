@@ -16,8 +16,11 @@ namespace Hotel_Management.Models
 
         [Display(Name = "Last Name")]
         public string CustomerLastName { get; set; }
+        
+        //calculated column
+        [Display(Name = "Full Name")]
+        public string CustomerFullName { get; set; }
 
-        //FullName string is computed
 
         [Display(Name = "Address")]
         public string CustomerAddress { get; set; }

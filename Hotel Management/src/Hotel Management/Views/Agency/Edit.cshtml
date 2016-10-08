@@ -1,0 +1,87 @@
+@model Hotel_Management.Models.Agency
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Agency</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="AgencyAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyAddress" class="form-control" />
+                <span asp-validation-for="AgencyAddress" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AgencyCellPhoneNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyCellPhoneNumber" class="form-control" />
+                <span asp-validation-for="AgencyCellPhoneNumber" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AgencyCity" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyCity" class="form-control" />
+                <span asp-validation-for="AgencyCity" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AgencyContactName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyContactName" class="form-control" />
+                <span asp-validation-for="AgencyContactName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AgencyEmail" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyEmail" class="form-control" />
+                <span asp-validation-for="AgencyEmail" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AgencyName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyName" class="form-control" />
+                <span asp-validation-for="AgencyName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AgencySuburb" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencySuburb" class="form-control" />
+                <span asp-validation-for="AgencySuburb" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AgencyWorkPhone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AgencyWorkPhone" class="form-control" />
+                <span asp-validation-for="AgencyWorkPhone" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

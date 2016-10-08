@@ -1,0 +1,30 @@
+@model Hotel_Management.Models.Floor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Floor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FloorName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FloorNumber)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>

@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Authorization;
+using System.ComponentModel.DataAnnotations;
 
 namespace Hotel_Management.Models
 {
     public class Booking
     {
         public int ID { get; set; }
-
+        
+        [Display(Name = "Date Booking Made")]
         public DateTime BookingMade { get; set; }
 
+        [Display(Name = "Date of Arrival")]
         public DateTime ArrivalDate { get; set; }
 
+        [Display(Name = "Date of Departure")]
         public DateTime DepartureDate { get; set; }
 
         //Number of Mights is computed

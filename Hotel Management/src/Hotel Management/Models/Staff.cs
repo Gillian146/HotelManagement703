@@ -17,7 +17,9 @@ namespace Hotel_Management.Models
         [Display(Name = "Last Name")]
         public string StaffLastName { get; set; }
 
-        //FullName string is computed
+        //calculated column
+        [Display(Name = "Full Name")]
+        public string StaffFullName { get; set; }
 
         [Display(Name = "Address")]
         public string StaffAddress { get; set; }
@@ -51,6 +53,10 @@ namespace Hotel_Management.Models
         //These two lines represent the many side
         public int? JobPositionID { get; set; }
         public virtual JobPosition JobPosition { get; set; }
+
+        //one to Many Relationship. One Staff can have  many Maintenance Requests
+        //This is the 'one' side of the code required for that relationship
+        public virtual ICollection<Maintenance> Maintenance { get; set; }
     }
 
 }
