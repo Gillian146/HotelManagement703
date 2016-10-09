@@ -6,23 +6,22 @@ using Hotel_Management.Models;
 
 namespace Hotel_Management.Controllers
 {
-    public class RoomController : Controller
+    public class CalendarController : Controller
     {
         private ApplicationDbContext _context;
 
-        public RoomController(ApplicationDbContext context)
+        public CalendarController(ApplicationDbContext context)
         {
             _context = context;    
         }
 
-        // GET: Room
+        // GET: Calendar
         public IActionResult Index()
         {
-            var applicationDbContext = _context.Room.Include(r => r.Floor);
-            return View(applicationDbContext.ToList());
+            return View(_context.Calendar.ToList());
         }
 
-        // GET: Room/Details/5
+        // GET: Calendar/Details/5
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -30,38 +29,36 @@ namespace Hotel_Management.Controllers
                 return HttpNotFound();
             }
 
-            Room room = _context.Room.Single(m => m.ID == id);
-            if (room == null)
+            Calendar calendar = _context.Calendar.Single(m => m.ID == id);
+            if (calendar == null)
             {
                 return HttpNotFound();
             }
 
-            return View(room);
+            return View(calendar);
         }
 
-        // GET: Room/Create
+        // GET: Calendar/Create
         public IActionResult Create()
         {
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor");
             return View();
         }
 
-        // POST: Room/Create
+        // POST: Calendar/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Room room)
+        public IActionResult Create(Calendar calendar)
         {
             if (ModelState.IsValid)
             {
-                _context.Room.Add(room);
+                _context.Calendar.Add(calendar);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor", room.FloorID);
-            return View(room);
+            return View(calendar);
         }
 
-        // GET: Room/Edit/5
+        // GET: Calendar/Edit/5
         public IActionResult Edit(int? id)
         {
             if (id == null)
@@ -69,31 +66,29 @@ namespace Hotel_Management.Controllers
                 return HttpNotFound();
             }
 
-            Room room = _context.Room.Single(m => m.ID == id);
-            if (room == null)
+            Calendar calendar = _context.Calendar.Single(m => m.ID == id);
+            if (calendar == null)
             {
                 return HttpNotFound();
             }
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor", room.FloorID);
-            return View(room);
+            return View(calendar);
         }
 
-        // POST: Room/Edit/5
+        // POST: Calendar/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Room room)
+        public IActionResult Edit(Calendar calendar)
         {
             if (ModelState.IsValid)
             {
-                _context.Update(room);
+                _context.Update(calendar);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor", room.FloorID);
-            return View(room);
+            return View(calendar);
         }
 
-        // GET: Room/Delete/5
+        // GET: Calendar/Delete/5
         [ActionName("Delete")]
         public IActionResult Delete(int? id)
         {
@@ -102,22 +97,22 @@ namespace Hotel_Management.Controllers
                 return HttpNotFound();
             }
 
-            Room room = _context.Room.Single(m => m.ID == id);
-            if (room == null)
+            Calendar calendar = _context.Calendar.Single(m => m.ID == id);
+            if (calendar == null)
             {
                 return HttpNotFound();
             }
 
-            return View(room);
+            return View(calendar);
         }
 
-        // POST: Room/Delete/5
+        // POST: Calendar/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            Room room = _context.Room.Single(m => m.ID == id);
-            _context.Room.Remove(room);
+            Calendar calendar = _context.Calendar.Single(m => m.ID == id);
+            _context.Calendar.Remove(calendar);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

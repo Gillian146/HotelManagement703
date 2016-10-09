@@ -6,23 +6,22 @@ using Hotel_Management.Models;
 
 namespace Hotel_Management.Controllers
 {
-    public class RoomController : Controller
+    public class CheckInStatusController : Controller
     {
         private ApplicationDbContext _context;
 
-        public RoomController(ApplicationDbContext context)
+        public CheckInStatusController(ApplicationDbContext context)
         {
             _context = context;    
         }
 
-        // GET: Room
+        // GET: CheckInStatus
         public IActionResult Index()
         {
-            var applicationDbContext = _context.Room.Include(r => r.Floor);
-            return View(applicationDbContext.ToList());
+            return View(_context.CheckInStatus.ToList());
         }
 
-        // GET: Room/Details/5
+        // GET: CheckInStatus/Details/5
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -30,38 +29,36 @@ namespace Hotel_Management.Controllers
                 return HttpNotFound();
             }
 
-            Room room = _context.Room.Single(m => m.ID == id);
-            if (room == null)
+            CheckInStatus checkInStatus = _context.CheckInStatus.Single(m => m.ID == id);
+            if (checkInStatus == null)
             {
                 return HttpNotFound();
             }
 
-            return View(room);
+            return View(checkInStatus);
         }
 
-        // GET: Room/Create
+        // GET: CheckInStatus/Create
         public IActionResult Create()
         {
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor");
             return View();
         }
 
-        // POST: Room/Create
+        // POST: CheckInStatus/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Room room)
+        public IActionResult Create(CheckInStatus checkInStatus)
         {
             if (ModelState.IsValid)
             {
-                _context.Room.Add(room);
+                _context.CheckInStatus.Add(checkInStatus);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor", room.FloorID);
-            return View(room);
+            return View(checkInStatus);
         }
 
-        // GET: Room/Edit/5
+        // GET: CheckInStatus/Edit/5
         public IActionResult Edit(int? id)
         {
             if (id == null)
@@ -69,31 +66,29 @@ namespace Hotel_Management.Controllers
                 return HttpNotFound();
             }
 
-            Room room = _context.Room.Single(m => m.ID == id);
-            if (room == null)
+            CheckInStatus checkInStatus = _context.CheckInStatus.Single(m => m.ID == id);
+            if (checkInStatus == null)
             {
                 return HttpNotFound();
             }
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor", room.FloorID);
-            return View(room);
+            return View(checkInStatus);
         }
 
-        // POST: Room/Edit/5
+        // POST: CheckInStatus/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Room room)
+        public IActionResult Edit(CheckInStatus checkInStatus)
         {
             if (ModelState.IsValid)
             {
-                _context.Update(room);
+                _context.Update(checkInStatus);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor", room.FloorID);
-            return View(room);
+            return View(checkInStatus);
         }
 
-        // GET: Room/Delete/5
+        // GET: CheckInStatus/Delete/5
         [ActionName("Delete")]
         public IActionResult Delete(int? id)
         {
@@ -102,22 +97,22 @@ namespace Hotel_Management.Controllers
                 return HttpNotFound();
             }
 
-            Room room = _context.Room.Single(m => m.ID == id);
-            if (room == null)
+            CheckInStatus checkInStatus = _context.CheckInStatus.Single(m => m.ID == id);
+            if (checkInStatus == null)
             {
                 return HttpNotFound();
             }
 
-            return View(room);
+            return View(checkInStatus);
         }
 
-        // POST: Room/Delete/5
+        // POST: CheckInStatus/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            Room room = _context.Room.Single(m => m.ID == id);
-            _context.Room.Remove(room);
+            CheckInStatus checkInStatus = _context.CheckInStatus.Single(m => m.ID == id);
+            _context.CheckInStatus.Remove(checkInStatus);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

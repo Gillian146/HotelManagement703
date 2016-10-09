@@ -20,9 +20,11 @@ namespace Hotel_Management.Models
         [Display(Name = "Date of Departure")]
         public DateTime DepartureDate { get; set; }
 
-        //Number of Mights is computed
 
-            //still need relationship with Carpark???
+        [Display(Name = "Number of Nights")]
+        public int NumberofNights { get; set; }
+
+        //still need relationship with Carpark???
 
         //one to Many Relationship. One Customer can have many Bookings
         //These two lines represent the many side
@@ -39,10 +41,15 @@ namespace Hotel_Management.Models
         public int? InvoiceID { get; set; }
         public virtual Invoice Invoice { get; set; }
 
-        //one to Many Relationship. One Room can have many Bookings
+        //one to Many Relationship. One Room can have many Dates
+        //This is the 'one' side of the code required for that relationship
+        public virtual ICollection<CalendarToRoom> CalendarToRoom { get; set; }
+
+        //one to Many Relationship. One Status can be on many Bookings
         //These two lines represent the many side
-        public int? RoomID { get; set; }
-        public virtual Room Room { get; set; }
+        public int? CheckInStatusID { get; set; }
+        public virtual CheckInStatus CheckInStatus { get; set; }
+
 
     }
 }

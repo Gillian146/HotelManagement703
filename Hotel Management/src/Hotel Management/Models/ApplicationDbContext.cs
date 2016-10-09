@@ -40,5 +40,7 @@ namespace Hotel_Management.Models
         public DbSet<RoomType> RoomType { get; set; }
         public DbSet<State> State { get; set; }
         public DbSet<Maintenance> Maintenance { get; set; }
+        public DbSet<Calendar> Calendar { get; set; }
+        public DbSet<CheckInStatus> CheckInStatus { get; set; }
     }
 }

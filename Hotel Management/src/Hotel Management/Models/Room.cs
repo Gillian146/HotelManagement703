@@ -29,9 +29,9 @@ namespace Hotel_Management.Models
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<RoomAvailability> RoomAvailability { get; set; }
 
-        //one to Many Relationship. One Room can have many Bookings
+        //one to Many Relationship. One Room can have many Dates
         //This is the 'one' side of the code required for that relationship
-        public virtual ICollection<Booking> Booking { get; set; }
+        public virtual ICollection<CalendarToRoom> CalendarToRoom { get; set; }
 
         //one to Many Relationship. One Room can have  many Maintenance Requests
         //This is the 'one' side of the code required for that relationship

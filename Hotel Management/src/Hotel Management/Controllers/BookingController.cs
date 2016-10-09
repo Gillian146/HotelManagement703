@@ -14,14 +14,16 @@ namespace Hotel_Management.Controllers
         {
             _context = context;    
         }
+
         public IActionResult Tasks()
         {
             return View();
         }
+
         // GET: Booking
         public IActionResult Index()
         {
-            var applicationDbContext = _context.Booking.Include(b => b.CreditCardDetails).Include(b => b.CustomerGuest).Include(b => b.Invoice).Include(b => b.Room);
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CreditCardDetails).Include(b => b.CustomerGuest).Include(b => b.Invoice);
             return View(applicationDbContext.ToList());
         }
 
@@ -45,10 +47,10 @@ namespace Hotel_Management.Controllers
         // GET: Booking/Create
         public IActionResult Create()
         {
-            //ViewData["CreditCardDetailsID"] = new SelectList(_context.Set<CreditCardDetails>(), "ID", "CreditCardDetails");
-            ViewData["GuestID"] = new SelectList(_context.CustomerGuest.OrderBy(d => d.CustomerLastName), "ID", "CustomerFullName");
-           // ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice");
-            ViewData["RoomID"] = new SelectList(_context.Room, "ID", "RoomNumber");
+            ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus");
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails");
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest");
+            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice");
             return View();
         }
 
@@ -63,10 +65,10 @@ namespace Hotel_Management.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["CreditCardDetailsID"] = new SelectList(_context.Set<CreditCardDetails>(), "ID", "CreditCardDetails", booking.CreditCardDetailsID);
-            ViewData["CustomerGuestID"] = new SelectList(_context.Set<CustomerGuest>(), "ID", "CustomerGuest", booking.CustomerGuestID);
-            ViewData["InvoiceID"] = new SelectList(_context.Set<Invoice>(), "ID", "Invoice", booking.InvoiceID);
-            ViewData["RoomID"] = new SelectList(_context.Set<Room>(), "ID", "Room", booking.RoomID);
+            ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", booking.CustomerGuestID);
+            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice", booking.InvoiceID);
             return View(booking);
         }
 
@@ -83,10 +85,10 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["CreditCardDetailsID"] = new SelectList(_context.Set<CreditCardDetails>(), "ID", "CreditCardDetails", booking.CreditCardDetailsID);
-            ViewData["CustomerGuestID"] = new SelectList(_context.Set<CustomerGuest>(), "ID", "CustomerGuest", booking.CustomerGuestID);
-            ViewData["InvoiceID"] = new SelectList(_context.Set<Invoice>(), "ID", "Invoice", booking.InvoiceID);
-            ViewData["RoomID"] = new SelectList(_context.Set<Room>(), "ID", "Room", booking.RoomID);
+            ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", booking.CustomerGuestID);
+            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice", booking.InvoiceID);
             return View(booking);
         }
 
@@ -101,10 +103,10 @@ namespace Hotel_Management.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["CreditCardDetailsID"] = new SelectList(_context.Set<CreditCardDetails>(), "ID", "CreditCardDetails", booking.CreditCardDetailsID);
-            ViewData["CustomerGuestID"] = new SelectList(_context.Set<CustomerGuest>(), "ID", "CustomerGuest", booking.CustomerGuestID);
-            ViewData["InvoiceID"] = new SelectList(_context.Set<Invoice>(), "ID", "Invoice", booking.InvoiceID);
-            ViewData["RoomID"] = new SelectList(_context.Set<Room>(), "ID", "Room", booking.RoomID);
+            ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", booking.CustomerGuestID);
+            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice", booking.InvoiceID);
             return View(booking);
         }
 

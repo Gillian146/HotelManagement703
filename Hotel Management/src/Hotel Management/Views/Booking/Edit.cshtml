@@ -27,6 +27,13 @@
             </div>
         </div>
         <div class="form-group">
+            <label asp-for="CheckInStatusID" class="control-label col-md-2">CheckInStatusID</label>
+            <div class="col-md-10">
+                <select asp-for="CheckInStatusID" class="form-control" />
+                <span asp-validation-for="CheckInStatusID" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
             <label asp-for="CreditCardDetailsID" class="control-label col-md-2">CreditCardDetailsID</label>
             <div class="col-md-10">
                 <select asp-for="CreditCardDetailsID" class="form-control" />
@@ -55,10 +62,10 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="RoomID" class="control-label col-md-2">RoomID</label>
+            <label asp-for="NumberofNights" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="RoomID" class="form-control" />
-                <span asp-validation-for="RoomID" class="text-danger" />
+                <input asp-for="NumberofNights" class="form-control" />
+                <span asp-validation-for="NumberofNights" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
