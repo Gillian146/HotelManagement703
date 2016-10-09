@@ -14,6 +14,10 @@ namespace Hotel_Management.Controllers
         {
             _context = context;    
         }
+        public IActionResult Tasks()
+        {
+            return View();
+        }
 
         // GET: Room
         public IActionResult Index()
@@ -42,7 +46,7 @@ namespace Hotel_Management.Controllers
         // GET: Room/Create
         public IActionResult Create()
         {
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor");
+            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "FloorName");
             return View();
         }
 

@@ -11,9 +11,7 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.HotelCity)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.HotelName)
         </th>
@@ -23,14 +21,15 @@
         <th>
             @Html.DisplayNameFor(model => model.HotelStreetAddress)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelCity)
+        </th>
         <th></th>
     </tr>
     
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.HotelCity)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.HotelName)
         </td>
@@ -39,6 +38,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.HotelStreetAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelCity)
         </td>
         <td>
             <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

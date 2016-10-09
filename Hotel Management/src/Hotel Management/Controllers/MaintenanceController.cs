@@ -14,6 +14,10 @@ namespace Hotel_Management.Controllers
         {
             _context = context;    
         }
+        public IActionResult Backup()
+        {
+            return View();
+        }
 
         // GET: Maintenance
         public IActionResult Index()
@@ -42,8 +46,8 @@ namespace Hotel_Management.Controllers
         // GET: Maintenance/Create
         public IActionResult Create()
         {
-            ViewData["RoomID"] = new SelectList(_context.Room, "ID", "Room");
-            ViewData["StaffID"] = new SelectList(_context.Staff, "ID", "Staff");
+            ViewData["RoomID"] = new SelectList(_context.Room, "ID", "RoomNumber");
+            ViewData["StaffID"] = new SelectList(_context.Staff, "ID", "StaffFullName");
             return View();
         }
 

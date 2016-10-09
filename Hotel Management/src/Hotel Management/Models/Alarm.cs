@@ -15,12 +15,15 @@ namespace Hotel_Management.Models
         public string AlarmTitle { get; set; }
 
         [Display(Name = "Date Message Received")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime AlarmDateReceived { get; set; }
 
         [Display(Name = "Alarm Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime AlarmDate { get; set; }
 
         [Display(Name = "Alarm Time")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public DateTime AlarmTime { get; set; }
 
         [Display(Name = "Alarm Actioned")]

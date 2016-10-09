@@ -18,7 +18,8 @@ namespace Hotel_Management.Controllers
         // GET: Alarm
         public IActionResult Index()
         {
-            var applicationDbContext = _context.Alarm.Include(a => a.CustomerGuest);
+            ///has undelievered at the top
+            var applicationDbContext = _context.Alarm.Include(a => a.CustomerGuest).OrderBy(u =>u.AlarmDelivered).ThenBy(d=>d.AlarmDate);
             return View(applicationDbContext.ToList());
         }
 
@@ -42,7 +43,7 @@ namespace Hotel_Management.Controllers
         // GET: Alarm/Create
         public IActionResult Create()
         {
-            ViewData["CustomerGuestID"] = new SelectList(_context.Set<CustomerGuest>(), "ID", "CustomerGuest");
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
             return View();
         }
 
@@ -68,13 +69,13 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-
-            Alarm alarm = _context.Alarm.Single(m => m.ID == id);
+            //include Customers so we can access their fullname, not just ID
+            Alarm alarm = _context.Alarm.Include(a => a.CustomerGuest).Single(m => m.ID == id);
             if (alarm == null)
             {
                 return HttpNotFound();
             }
-            ViewData["CustomerGuestID"] = new SelectList(_context.Set<CustomerGuest>(), "ID", "CustomerGuest", alarm.CustomerGuestID);
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
             return View(alarm);
         }
 

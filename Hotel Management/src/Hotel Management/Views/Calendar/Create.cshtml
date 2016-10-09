@@ -14,7 +14,7 @@
         <div class="form-group">
             <label asp-for="Date" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Date" class="form-control" />
+                <input asp-for="Date" type="date" id="datepicker" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger" />
             </div>
         </div>
@@ -27,7 +27,7 @@
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Create">Back to List</a>
 </div>
 
 @section Scripts {

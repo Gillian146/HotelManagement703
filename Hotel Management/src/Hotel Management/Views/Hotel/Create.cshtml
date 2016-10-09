@@ -11,13 +11,7 @@
         <h4>Hotel</h4>
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="HotelCity" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="HotelCity" class="form-control" />
-                <span asp-validation-for="HotelCity" class="text-danger" />
-            </div>
-        </div>
+        
         <div class="form-group">
             <label asp-for="HotelName" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -37,6 +31,13 @@
             <div class="col-md-10">
                 <input asp-for="HotelStreetAddress" class="form-control" />
                 <span asp-validation-for="HotelStreetAddress" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="HotelCity" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="HotelCity" class="form-control" />
+                <span asp-validation-for="HotelCity" class="text-danger" />
             </div>
         </div>
         <div class="form-group">

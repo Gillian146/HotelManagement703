@@ -45,6 +45,7 @@ namespace Hotel_Management.Controllers
         // GET: Hotel/Create
         public IActionResult Create()
         {
+           
             return View();
         }
 

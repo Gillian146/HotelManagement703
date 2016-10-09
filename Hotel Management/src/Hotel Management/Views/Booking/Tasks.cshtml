@@ -60,6 +60,33 @@
 <div class="row">
 
     <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Alarms Report</h3>
+        <a asp-controller="Alarm" asp-action="Index" class="btn btn-warning btn-block">
+            <span class="glyphicon glyphicon-check glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6 ">
+        <h3 class="text-center">Messages Report</h3>
+        <a asp-controller="MessageAlert" asp-action="Index" class="btn btn-warning btn-block">
+            <span class="glyphicon glyphicon-share glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Maintenance Report</h3>
+        <a asp-controller="Maintenance" asp-action="Index" class="btn btn-warning btn-block">
+            <span class="glyphicon glyphicon-play glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Backup System</h3>
+        <a asp-controller="Maintenance" asp-action="Backup" class="btn btn-danger btn-block">
+            <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-3 col-sm-6">
         <h3 class="text-center">Make Payment</h3>
         <a asp-controller="Payment" asp-action="Create" class="btn btn-success btn-block">
             <span class="glyphicon glyphicon-usd glyphicon-large" aria-hidden="true"></span>

@@ -42,7 +42,7 @@ namespace Hotel_Management.Controllers
         // GET: Floor/Create
         public IActionResult Create()
         {
-            ViewData["HotelID"] = new SelectList(_context.Set<Hotel>(), "ID", "Hotel");
+            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "HotelName");
             return View();
         }
 
