@@ -55,6 +55,13 @@
             </div>
         </div>
         <div class="form-group">
+            <label asp-for="CustomerGuestID" class="control-label col-md-2">CustomerGuestID</label>
+            <div class="col-md-10">
+                <select asp-for="CustomerGuestID" class="form-control" />
+                <span asp-validation-for="CustomerGuestID" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>

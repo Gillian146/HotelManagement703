@@ -18,7 +18,8 @@ namespace Hotel_Management.Controllers
         // GET: CreditCardDetails
         public IActionResult Index()
         {
-            return View(_context.CreditCardDetails.ToList());
+            var applicationDbContext = _context.CreditCardDetails.Include(c => c.CustomerGuest);
+            return View(applicationDbContext.ToList());
         }
 
         // GET: CreditCardDetails/Details/5
@@ -41,6 +42,7 @@ namespace Hotel_Management.Controllers
         // GET: CreditCardDetails/Create
         public IActionResult Create()
         {
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
             return View();
         }
 
@@ -55,6 +57,7 @@ namespace Hotel_Management.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", creditCardDetails.CustomerGuestID);
             return View(creditCardDetails);
         }
 
@@ -71,6 +74,7 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", creditCardDetails.CustomerGuestID);
             return View(creditCardDetails);
         }
 
@@ -85,6 +89,7 @@ namespace Hotel_Management.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", creditCardDetails.CustomerGuestID);
             return View(creditCardDetails);
         }
 

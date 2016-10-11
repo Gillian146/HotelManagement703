@@ -8,9 +8,10 @@ using Hotel_Management.Models;
 namespace Hotel_Management.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20161011021453_creditCradRelationship")]
+    partial class creditCradRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -267,12 +268,11 @@ namespace Hotel_Management.Migrations
 
                     b.Property<int>("CreditCardExpiryYear");
 
-                    b.Property<string>("CreditCardName")
-                        .IsRequired();
+                    b.Property<string>("CreditCardName");
 
                     b.Property<string>("CreditCardNotes");
 
-                    b.Property<int>("CreditCardNumber");
+                    b.Property<string>("CreditCardNumber");
 
                     b.Property<int?>("CustomerGuestID");
 

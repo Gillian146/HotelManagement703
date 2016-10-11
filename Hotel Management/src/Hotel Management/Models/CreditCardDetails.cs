@@ -12,17 +12,21 @@ namespace Hotel_Management.Models
         public int ID { get; set; }
 
         [Display(Name = "Credit Card Number")]
-        public string CreditCardNumber { get; set; }
+      
+        public int CreditCardNumber { get; set; }
 
         [Display(Name = "Credit Card Expiry Month")]
+        [Range(1, 12, ErrorMessage = "January is 01 etc")]
         public int CreditCardExpiryMonth { get; set; }
 
         [Display(Name = "Credit Card Expiry Year")]
+        [Range(16, 20, ErrorMessage = "Year between 2016 and 2020")]
         public int CreditCardExpiryYear { get; set; }
 
         [Display(Name = "Credit Card CVC ")]
         public int CreditCardCVC { get; set; }
 
+        [Required]
         [Display(Name = "Name on Card")]
         public string CreditCardName { get; set; }
 
@@ -36,5 +40,11 @@ namespace Hotel_Management.Models
         //one to Many Relationship. One CreditCard can have many Payments
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<Payment> Payment { get; set; }
+
+        //one to Many Relationship. One Guest can have many CreditCards
+        //These two lines represent the many side
+        public int? CustomerGuestID { get; set; }
+        public virtual CustomerGuest CustomerGuest { get; set; }
     }
+
 }

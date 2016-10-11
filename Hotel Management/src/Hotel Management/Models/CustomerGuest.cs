@@ -64,5 +64,9 @@ namespace Hotel_Management.Models
         //one to Many Relationship. One Guest can have many ChargeBacks
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<ChargeBack> ChargeBack { get; set; }
+
+        //one to Many Relationship. One Guest can have many CreditCards
+        //This is the 'one' side of the code required for that relationship
+        public virtual ICollection<CreditCardDetails> CreditCardDetails { get; set; }
     }
 }
