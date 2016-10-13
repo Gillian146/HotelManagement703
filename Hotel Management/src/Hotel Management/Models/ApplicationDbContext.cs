@@ -18,7 +18,9 @@ namespace Hotel_Management.Models
             // Add your customizations after calling base.OnModelCreating(builder);
             builder.Entity<Staff>().Property(p => p.StaffFullName).HasComputedColumnSql("[StaffFirstName] + ' ' + [StaffLastName]");
             builder.Entity<CustomerGuest>().Property(p => p.CustomerFullName).HasComputedColumnSql("[CustomerFirstName] + ' ' + [CustomerLastName]");
-           
+            builder.Entity<Booking>().Property(p => p.BookingRange).HasComputedColumnSql("'Arrives:' + CONVERT(VARCHAR(10), [ArrivalDate], 103) + '- Departs:' + CONVERT(VARCHAR(10), [DepartureDate], 103) ");
+
+
         }
         public DbSet<Staff> Staff { get; set; }
         public DbSet<Agency> Agency { get; set; }
@@ -40,7 +42,7 @@ namespace Hotel_Management.Models
         public DbSet<RoomType> RoomType { get; set; }
         public DbSet<State> State { get; set; }
         public DbSet<Maintenance> Maintenance { get; set; }
-        public DbSet<Calendar> Calendar { get; set; }
         public DbSet<CheckInStatus> CheckInStatus { get; set; }
+        public DbSet<CalendarToRoom> CalendarToRoom { get; set; }
     }
 }

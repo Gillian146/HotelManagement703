@@ -21,6 +21,12 @@ namespace Hotel_Management.Controllers
             var applicationDbContext = _context.MessageAlert.Include(m => m.CustomerGuest);
             return View(applicationDbContext.ToList());
         }
+        // GET: MessageAlert
+        public IActionResult IndexToAction()
+        {
+            var applicationDbContext = _context.MessageAlert.Include(m => m.CustomerGuest).Where(a => a.MessageAlertDelivered.Equals(false));
+            return View(applicationDbContext.ToList());
+        }
 
         // GET: MessageAlert/Details/5
         public IActionResult Details(int? id)
@@ -42,7 +48,7 @@ namespace Hotel_Management.Controllers
         // GET: MessageAlert/Create
         public IActionResult Create()
         {
-            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest");
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
             return View();
         }
 

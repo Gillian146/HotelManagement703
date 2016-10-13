@@ -1,0 +1,67 @@
+@model Hotel_Management.Models.CalendarToRoom
+
+@{
+    ViewData["Title"] = "Create";
+    var BookingID = (IEnumerable<SelectListItem>)ViewData["BookingID"];
+    var RoomID = (IEnumerable<SelectListItem>)ViewData["RoomID"];
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Choose Your Room</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="BookingID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="BookingID" asp-items="BookingID" type="date" class ="form-control"></select>
+            </div>
+        </div>
+       
+        <div class="form-group">
+            <label asp-for="RoomID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="RoomID" asp-items="RoomID" class ="form-control">
+                    <option></option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BookRoom" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BookRoom" type="date" id="datepicker1" class="form-control" />
+
+                <span asp-validation-for="BookRoom" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="IsBooked" checked />
+                    <label asp-for="IsBooked"></label>
+                </div>
+            </div>
+        </div><div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Book This Room" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="btn btn-success">
+    <a  asp-action="Create" asp-controller="CreditCardDetails">Booking Complete</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#datepicker1").datepicker();
+    });
+</script>
+}

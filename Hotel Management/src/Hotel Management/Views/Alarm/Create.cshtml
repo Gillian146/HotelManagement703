@@ -15,7 +15,7 @@
         <div class="form-group">
             <label asp-for="AlarmDateReceived" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="AlarmDateReceived" type="date" id="datepicker1" class="form-control" />
+                <input asp-for="AlarmDateReceived"  id="datepicker1" class="form-control" />
                 <span asp-validation-for="AlarmDateReceived" class="text-danger" />
             </div>
         </div>
@@ -37,14 +37,14 @@
         <div class="form-group">
             <label asp-for="AlarmDate" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="AlarmDate" type="date" id="datepicker2" class="form-control" />
+                <input asp-for="AlarmDate"  id="datepicker2" class="form-control" />
                 <span asp-validation-for="AlarmDate" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
             <label asp-for="AlarmTime" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="AlarmTime" type="time" id="timepicker3" class="form-control" />
+                <input asp-for="AlarmTime"  id="timepicker3" class="form-control" />
                 <span asp-validation-for="AlarmTime" class="text-danger" />
             </div>
         </div>
@@ -72,13 +72,29 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-<script type="text/javascript">
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script>
+
     $(function () {
-      
-        $("#datepicker1").datepicker();
-        $("#datepicker2").datepicker();
-        $("#timepicker3").timepicker();
+        $("#datepicker1").datepicker({ dateFormat: 'dd/mm/yy' }).datepicker("setDate", new Date());
+        $("#datepicker2").datepicker({ dateFormat: 'dd/mm/yy' }).datepicker("setDate", new Date());
+        $('#timepicker3').timepicker({
+            timeFormat: 'h:mm p',
+            interval: 15,
+            minTime: '12:15AM',
+            maxTime: '11:45PM',
+            defaultTime: '07',
+            startTime: '12:45AM',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+        });
+
     });
+
 </script>
+
 
 }

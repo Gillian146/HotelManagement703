@@ -1,4 +1,4 @@
-@model Hotel_Management.Models.Calendar
+@model Hotel_Management.Models.CalendarToRoom
 
 @{
     ViewData["Title"] = "Details";
@@ -7,14 +7,14 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Calendar</h4>
+    <h4>CalendarToRoom</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Date)
+            @Html.DisplayNameFor(model => model.IsBooked)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            @Html.DisplayFor(model => model.IsBooked)
         </dd>
     </dl>
 </div>

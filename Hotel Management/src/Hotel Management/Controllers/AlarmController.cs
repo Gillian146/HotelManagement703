@@ -23,6 +23,14 @@ namespace Hotel_Management.Controllers
             return View(applicationDbContext.ToList());
         }
 
+        // GET: Alarm
+        public IActionResult IndexToAction()
+        {
+            ///has undelievered at the top
+            var applicationDbContext = _context.Alarm.Include(a => a.CustomerGuest).OrderBy(u => u.AlarmDelivered).ThenBy(d => d.AlarmDate).Where(a=>a.AlarmDelivered.Equals(false));
+            return View(applicationDbContext.ToList());
+        }
+
         // GET: Alarm/Details/5
         public IActionResult Details(int? id)
         {

@@ -4,26 +4,20 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Please Action these Alarms</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AlarmDelivered)
+               <th>
+            @Html.DisplayNameFor(model => model.AlarmTitle)
         </th>
-       
         <th>
             @Html.DisplayNameFor(model => model.AlarmDate)
         </th>
                <th>
             @Html.DisplayNameFor(model => model.AlarmTime)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AlarmTitle)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.AlarmAlertNotes)
         </th>
@@ -32,10 +26,10 @@
     
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AlarmDelivered)
-        </td>
        
+        <td>
+            @Html.DisplayFor(modelItem => item.AlarmTitle)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.AlarmDate)
         </td>
@@ -44,9 +38,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.AlarmTime)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AlarmTitle)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.AlarmAlertNotes)
         </td>

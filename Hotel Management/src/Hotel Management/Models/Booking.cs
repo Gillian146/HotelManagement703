@@ -10,19 +10,25 @@ namespace Hotel_Management.Models
     public class Booking
     {
         public int ID { get; set; }
-        
+
         [Display(Name = "Date Booking Made")]
+        [DisplayFormat( DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BookingMade { get; set; }
 
         [Display(Name = "Date of Arrival")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime ArrivalDate { get; set; }
 
         [Display(Name = "Date of Departure")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DepartureDate { get; set; }
 
 
-        [Display(Name = "Number of Nights")]
+        [Display(Name = "Number of Nights")]      
         public int NumberofNights { get; set; }
+
+        [Display(Name = "In and Out")]
+        public string BookingRange { get; set; }
 
         //still need relationship with Carpark???
 

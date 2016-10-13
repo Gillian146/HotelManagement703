@@ -8,9 +8,10 @@ using Hotel_Management.Models;
 namespace Hotel_Management.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20161013063315_reset1")]
+    partial class reset1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -155,9 +156,7 @@ namespace Hotel_Management.Migrations
 
                     b.Property<DateTime>("BookingMade");
 
-                    b.Property<string>("BookingRange")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasAnnotation("Relational:GeneratedValueSql", "'Arrives:' + CONVERT(VARCHAR(10), [ArrivalDate], 103) + '- Departs:' + CONVERT(VARCHAR(10), [DepartureDate], 103) ");
+                    b.Property<string>("BookingRange");
 
                     b.Property<int?>("CheckInStatusID");
 

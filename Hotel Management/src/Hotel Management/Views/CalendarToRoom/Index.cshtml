@@ -1,4 +1,4 @@
-@model IEnumerable<Hotel_Management.Models.Calendar>
+@model IEnumerable<Hotel_Management.Models.CalendarToRoom>
 
 @{
     ViewData["Title"] = "Index";
@@ -12,7 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Date)
+            @Html.DisplayNameFor(model => model.IsBooked)
+        </th>
+        <th>
+            Booking Number
+        </th>
+        <th>
+           Room Number
+        </th>
+        <th>
+            Date
         </th>
         <th></th>
     </tr>
@@ -20,7 +29,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Date)
+            @Html.DisplayFor(modelItem => item.IsBooked)
         </td>
         <td>
             <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

@@ -19,11 +19,15 @@ namespace Hotel_Management.Controllers
         {
             return View();
         }
+        public IActionResult Reports()
+        {
+            return View();
+        }
 
         // GET: Booking
         public IActionResult Index()
         {
-            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CreditCardDetails).Include(b => b.CustomerGuest).Include(b => b.Invoice);
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CreditCardDetails).Include(b => b.CustomerGuest).Include(b => b.Invoice).Include(b => b.CalendarToRoom);
             return View(applicationDbContext.ToList());
         }
 
@@ -50,7 +54,7 @@ namespace Hotel_Management.Controllers
             ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus");
             ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails");
             ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
-            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice");
+            ViewData["CalendarToRoomID"] = new SelectList(_context.CalendarToRoom, "ID", "IsBooked");
             return View();
         }
 
@@ -63,7 +67,7 @@ namespace Hotel_Management.Controllers
             {
                 _context.Booking.Add(booking);
                 _context.SaveChanges();
-                return RedirectToAction( "Create", "CreditCardDetails");
+                return RedirectToAction( "Create", "CalendarToRoom");
             }
             ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
             ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);
