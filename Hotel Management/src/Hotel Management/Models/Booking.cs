@@ -12,7 +12,7 @@ namespace Hotel_Management.Models
         public int ID { get; set; }
 
         [Display(Name = "Date Booking Made")]
-        [DisplayFormat( DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BookingMade { get; set; }
 
         [Display(Name = "Date of Arrival")]

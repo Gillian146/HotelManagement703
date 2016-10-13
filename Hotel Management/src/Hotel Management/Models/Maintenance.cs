@@ -14,16 +14,17 @@ namespace Hotel_Management.Models
         [Display(Name = "Maintenance Subject")]
         public string MaintenanceName { get; set; }
 
-        [Display(Name = "Maintenance Date Lodged")]
+        [Display(Name = "Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateEntered { get; set; }
 
-        [Display(Name = "Maintenance Description Details")]
+        [Display(Name = "Maintenance Details")]
         public string MaintenanceDescription { get; set; }
 
         [Display(Name = "Maintenance Notes")]
         public string MaintenanceNotes { get; set; }
 
-        [Display(Name = "Maintenance Completed")]
+        [Display(Name = "Completed")]
         public bool MaintenanceCompleted { get; set; }
 
         //one to Many Relationship. One Staff can lodge  many Maintenance Requests

@@ -26,6 +26,13 @@ namespace Hotel_Management.Controllers
             return View(applicationDbContext.ToList());
         }
 
+        // GET: Maintenance
+        public IActionResult IndexToAction()
+        {
+            var applicationDbContext = _context.Maintenance.Include(m => m.Room).OrderBy(m=>m.Room.RoomNumber).Where(k=>k.MaintenanceCompleted.Equals(false));
+            return View(applicationDbContext.ToList());
+        }
+
         // GET: Maintenance/Details/5
         public IActionResult Details(int? id)
         {
@@ -80,8 +87,10 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["RoomID"] = new SelectList(_context.Room, "ID", "Room", maintenance.RoomID);
-            ViewData["StaffID"] = new SelectList(_context.Staff, "ID", "Staff", maintenance.StaffID);
+            ViewData["RoomID"] = new SelectList(_context.Room, "ID", "RoomNumber");
+            ViewData["StaffID"] = new SelectList(_context.Staff, "ID", "StaffFullName");
+            //ViewData["RoomID"] = new SelectList(_context.Room, "ID", "Room", maintenance.RoomID);
+            //ViewData["StaffID"] = new SelectList(_context.Staff, "ID", "Staff", maintenance.StaffID);
             return View(maintenance);
         }
 
