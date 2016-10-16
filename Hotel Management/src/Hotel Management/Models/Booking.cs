@@ -30,8 +30,6 @@ namespace Hotel_Management.Models
         [Display(Name = "In and Out")]
         public string BookingRange { get; set; }
 
-        //still need relationship with Carpark???
-
         //one to Many Relationship. One Customer can have many Bookings
         //These two lines represent the many side
         public int? CustomerGuestID { get; set; }

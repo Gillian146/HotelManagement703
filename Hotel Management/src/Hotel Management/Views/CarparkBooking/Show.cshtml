@@ -1,0 +1,84 @@
+@model IEnumerable<Hotel_Management.Models.CarparkBooking>
+
+@{
+    ViewData["Title"] = "Index";
+    var CarparkID = (IEnumerable<SelectListItem>)ViewData["CarparkID"];
+}
+
+<h2>Carpark Bookings</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Carpark
+        </th>
+        <th>
+            16/10/2016
+        </th>
+        <th>
+            17/10/2016
+        </th>
+        <th>
+            18/10/2016
+        </th>
+        <th>
+            19/10/2016
+        </th>
+
+    </tr>
+
+    @foreach (var item1 in CarparkID)
+    {
+        <tr>
+            <td>
+
+                @Html.DisplayFor(c => item1.Text) @*shows carpark number*@
+            </td> 
+
+            @foreach (var item in Model)
+            {
+                if (item.Carpark.CarparkNumber == item1.Text)
+                {
+
+               
+                if (item.Date == Convert.ToDateTime("16/10/2016") )
+                {
+                    <td>Yes</td>
+                }
+                else
+                {
+                    <td></td>}
+                if (item.Date == Convert.ToDateTime("17/10/2016"))
+                {
+                    <td>Yes</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                if (item.Date == Convert.ToDateTime("18/10/2016") )
+                {
+                    <td>Yes</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                if (item.Date == Convert.ToDateTime("19/10/2016") )
+                {
+                    <td>Yes</td>
+                }
+                else
+                {
+                    <td></td>
+                    }
+                }
+
+            }
+        </tr>
+
+    }
+
+</table>
+

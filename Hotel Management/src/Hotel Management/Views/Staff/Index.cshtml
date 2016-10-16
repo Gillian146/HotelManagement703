@@ -12,64 +12,47 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.StaffAddress)
+            @Html.DisplayNameFor(model => model.JobPosition.JobPositionName)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StaffFullName)
+        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.StaffCellPhoneNumber)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StaffCity)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.StaffEmail)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StaffFirstName)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.StaffHomePhone)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StaffLastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StaffPhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StaffSuburb)
-        </th>
+        
         <th></th>
     </tr>
     
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.StaffAddress)
+            @Html.DisplayFor(modelItem => item.JobPosition.JobPositionName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StaffFullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StaffCellPhoneNumber)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StaffCity)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.StaffEmail)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StaffFirstName)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.StaffHomePhone)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StaffLastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StaffPhoto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StaffSuburb)
-        </td>
+        
         <td>
             <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
             <a asp-action="Details" asp-route-id="@item.ID">Details</a> |

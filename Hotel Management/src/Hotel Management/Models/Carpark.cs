@@ -30,5 +30,9 @@ namespace Hotel_Management.Models
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<CarParkAvailability> CarParkAvailability { get; set; }
 
+        //one to Many Relationship. One CarPark can have many CarparkBookings
+        //This is the 'one' side of the code required for that relationship
+        public virtual ICollection<CarparkBooking> CarparkBooking { get; set; }
+
     }
 }

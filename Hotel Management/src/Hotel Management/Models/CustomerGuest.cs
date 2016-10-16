@@ -68,5 +68,9 @@ namespace Hotel_Management.Models
         //one to Many Relationship. One Guest can have many CreditCards
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<CreditCardDetails> CreditCardDetails { get; set; }
+
+        //one to Many Relationship. One Guest can have many CarparkBookings
+        //This is the 'one' side of the code required for that relationship
+        public virtual ICollection<CarparkBooking> CarparkBooking { get; set; }
     }
 }

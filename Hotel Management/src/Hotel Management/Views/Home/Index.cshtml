@@ -1,12 +1,46 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="container">
+    <form name="time">
+        <input type="text" id="timeOnIndex" name="time2" size=50>
 
-<div>
-    <img class="img-responsive"   src="~/images/Hotel-California.png" />
-</div> 
-<div> Ben to orgnaise display here</div>
+    </form>
+</div>
+
+ 
+<div> Ben to organise display here</div>
+<br />
+
+@*example code to duplicate into other index pages*@
 <div class="tooltipgill">
     Hover over me
     <span class="tooltiptextgill">Tooltip text</span>
 </div>
+
+
+@*This controls the time*@
+@section Scripts{
+<script>
+function liveclock(){
+
+var curdate=new Date()//stores today
+var hours = curdate.getHours()//gets the hours
+var minutes=curdate.getMinutes()//gets minutes
+var seconds=curdate.getSeconds()
+var suffix ="AM"
+if (hours>=12){
+suffix="PM"}//deals with changing suffix
+if(hours>=13){
+hours-=12}//change to 12 hour time
+
+if(seconds<10){
+seconds="0" + seconds}
+
+var thetime=hours+":"+minutes+" "+suffix //puts it all togther
+document.time.time2.value=thetime//adds the var to the input
+setTimeout("liveclock()", 1000)//timesout just in case it doesnt work
+}
+liveclock()//runs the function
+</script>
+}

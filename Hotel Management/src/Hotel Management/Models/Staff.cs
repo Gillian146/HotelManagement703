@@ -46,11 +46,13 @@ namespace Hotel_Management.Models
         //one to Many Relationship. One hotel has many staff
         //These two lines represent the many side
         //int? makes it optional (or able to be null) which is helpful when we key in the input - not a strict representation of our ERD
+        [Display(Name = "Hotel")]
         public int? HotelID { get; set; }
         public virtual Hotel Hotel { get; set; }
 
         //one to Many Relationship. One hotel has many staff
         //These two lines represent the many side
+        [Display(Name = "Job Position")]
         public int? JobPositionID { get; set; }
         public virtual JobPosition JobPosition { get; set; }
 

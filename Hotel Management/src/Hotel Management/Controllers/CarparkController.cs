@@ -42,7 +42,7 @@ namespace Hotel_Management.Controllers
         // GET: Carpark/Create
         public IActionResult Create()
         {
-            ViewData["HotelID"] = new SelectList(_context.Set<Hotel>(), "ID", "Hotel");
+            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "HotelName");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace Hotel_Management.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["HotelID"] = new SelectList(_context.Set<Hotel>(), "ID", "Hotel", carpark.HotelID);
+            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "Hotel", carpark.HotelID);
             return View(carpark);
         }
 
@@ -74,7 +74,7 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["HotelID"] = new SelectList(_context.Set<Hotel>(), "ID", "Hotel", carpark.HotelID);
+            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "Hotel", carpark.HotelID);
             return View(carpark);
         }
 
@@ -89,7 +89,7 @@ namespace Hotel_Management.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["HotelID"] = new SelectList(_context.Set<Hotel>(), "ID", "Hotel", carpark.HotelID);
+            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "Hotel", carpark.HotelID);
             return View(carpark);
         }
 

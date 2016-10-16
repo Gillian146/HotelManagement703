@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    var HotelID = (IEnumerable<SelectListItem>)ViewData["HotelID"];
 }
 
 <h2>Create</h2>
@@ -11,6 +12,12 @@
         <h4>Carpark</h4>
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="HotelID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="HotelID" asp-items="HotelID" class="form-control"></select>
+            </div>
+        </div>
         <div class="form-group">
             <label asp-for="CarparkLocation" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -32,12 +39,7 @@
                 <span asp-validation-for="CarparkNumber" class="text-danger" />
             </div>
         </div>
-        <div class="form-group">
-            <label asp-for="HotelID" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <select asp-for="HotelID" class ="form-control"></select>
-            </div>
-        </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

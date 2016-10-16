@@ -47,8 +47,8 @@ namespace Hotel_Management.Controllers
         // GET: Staff/Create
         public IActionResult Create()
         {
-            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "Hotel");
-            ViewData["JobPositionID"] = new SelectList(_context.JobPosition, "ID", "JobPosition");
+            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "HotelName");
+            ViewData["JobPositionID"] = new SelectList(_context.JobPosition, "ID", "JobPositionName");
             return View();
         }
 
@@ -81,8 +81,8 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "Hotel", staff.HotelID);
-            ViewData["JobPositionID"] = new SelectList(_context.JobPosition, "ID", "JobPosition", staff.JobPositionID);
+            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "HotelName");
+            ViewData["JobPositionID"] = new SelectList(_context.JobPosition, "ID", "JobPositionName");
             return View(staff);
         }
 

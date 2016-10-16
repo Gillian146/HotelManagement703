@@ -20,7 +20,14 @@ select,
 textarea {
     max-width: 320px;
 }
-
+#timeOnIndex{
+    outline: none;
+    border:none;
+    display: block;
+    margin: 0 auto;
+    font-size:4em;
+    color:darkmagenta;
+}
 
 @media (min-width: 768px) {
     .carousel-caption {
