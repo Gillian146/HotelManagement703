@@ -8,79 +8,57 @@
     ViewData["Title"] = "Log in";
 }
 
-<h2>@ViewData["Title"].</h2>
+<div class="loginimage">
+    <img src="~/images/logo.png" style="width:350px;height:350px;" />
+</div>
+<div class="container">
+    <form name="time">
+        <input type="text" id="timeOnIndex" name="time2" size=50>
+
+    </form>
+</div>
 <div class="row">
-    <div class="col-md-8">
+    <div>
         <section>
-            <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                <div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Email" class="col-md-2 control-label"></label>
-                    <div class="col-md-10">
-                        <input asp-for="Email" class="form-control" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Password" class="col-md-2 control-label"></label>
-                    <div class="col-md-10">
-                        <input asp-for="Password" class="form-control" />
-                        <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            <input asp-for="RememberMe" />
-                            <label asp-for="RememberMe"></label>
+            <div class="loginform">
+                <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal-login" role="form" style="text-align:center;">
+                    <div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="col-lg-5 control-label"></label>
+                        <div class="col-lg-7" .>
+                            <input asp-for="Email" class="form-control-login" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <button type="submit" class="btn btn-default">Log in</button>
-                    </div>
-                </div>
-                <p>
-                    <a asp-action="Register">Register as a new user?</a>
-                </p>
-                <p>
-                    <a asp-action="ForgotPassword">Forgot your password?</a>
-                </p>
-            </form>
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section>
-            <h4>Use another service to log in.</h4>
-            <hr />
-            @{
-                var loginProviders = SignInManager.GetExternalAuthenticationSchemes().ToList();
-                if (loginProviders.Count == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form asp-controller="Account" asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
-                        <div>
-                            <p>
-                                @foreach (var provider in loginProviders)
-                                {
-                                    <button type="submit" class="btn btn-default" name="provider" value="@provider.AuthenticationScheme" title="Log in using your @provider.DisplayName account">@provider.AuthenticationScheme</button>
-                                }
-                            </p>
+                    <div class="form-group">
+                        <label asp-for="Password" class="col-lg-5 control-label"></label>
+                        <div class="col-lg-7">
+                            <input asp-for="Password" class="form-control-login" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
-                    </form>
-                }
-            }
+                    </div>
+                    <div class="form-group">
+
+                        <div class="col-lg-12">
+                            <div class="checkbox">
+                                <input asp-for="RememberMe" />
+                                <label asp-for="RememberMe"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-default">Log in</button>
+                        </div>
+                    </div>
+                    <p>
+                        <a asp-action="Register">Register as a new user?</a>
+                    </p>
+                    <p>
+                        <a asp-action="ForgotPassword">Forgot your password?</a>
+                    </p>
+                </form>
+            </div>
         </section>
     </div>
 </div>
@@ -88,3 +66,30 @@
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
+@*This controls the time*@
+<script>
+    function liveclock() {
+
+        var curdate = new Date()//stores today
+        var hours = curdate.getHours()//gets the hours
+        var minutes = curdate.getMinutes()//gets minutes
+        var seconds = curdate.getSeconds()
+        var suffix = "AM"
+        if (hours >= 12) {
+            suffix = "PM"
+        }//deals with changing suffix
+        if (hours >= 13) {
+            hours -= 12
+        }//change to 12 hour time
+
+        if (seconds < 10) {
+            seconds = "0" + seconds
+        }
+
+        var thetime = hours + ":" + minutes + " " + suffix //puts it all togther
+        document.time.time2.value = thetime//adds the var to the input
+        setTimeout("liveclock()", 1000)//timesout just in case it doesnt work
+    }
+    liveclock()//runs the function
+</script>
+    
