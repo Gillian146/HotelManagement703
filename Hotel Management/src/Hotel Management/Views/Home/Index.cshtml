@@ -1,22 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<div class="container">
+
     <form name="time">
         <input type="text" id="timeOnIndex" name="time2" size=50>
 
     </form>
-</div>
 
- 
-<div> Ben to organise display here</div>
-<br />
 
-@*example code to duplicate into other index pages*@
-<div class="tooltipgill">
-    Hover over me
-    <span class="tooltiptextgill">Tooltip text</span>
-</div>
+
+    <div> Ben to organise display here</div>
+    <br />
+
+    @*example code to duplicate into other index pages*@
+    <div class="tooltipgill">
+        Hover over me
+        <span class="tooltiptextgill">Tooltip text</span>
+    </div>
 
 
 @*This controls the time*@
@@ -34,8 +34,8 @@ suffix="PM"}//deals with changing suffix
 if(hours>=13){
 hours-=12}//change to 12 hour time
 
-if(seconds<10){
-seconds="0" + seconds}
+if(minutes<10){
+minutes="0" + minutes}
 
 var thetime=hours+":"+minutes+" "+suffix //puts it all togther
 document.time.time2.value=thetime//adds the var to the input
