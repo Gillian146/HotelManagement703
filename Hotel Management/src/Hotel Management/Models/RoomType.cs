@@ -15,7 +15,7 @@ namespace Hotel_Management.Models
         public string  RoomTypeName { get; set; }
 
         [Display(Name = "Room Type Notes")]
-        public int RoomTypeNotes { get; set; }
+        public string RoomTypeNotes { get; set; }
 
         //one to Many Relationship. One Floor can have many RoomTypes
         //This is the 'one' side of the code required for that relationship

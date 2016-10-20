@@ -11,12 +11,11 @@
 <div class="loginimage">
     <img src="~/images/logo.png" style="width:350px;height:350px;" />
 </div>
-<div class="container">
     <form name="time">
         <input type="text" id="timeOnIndex" name="time2" size=50>
 
     </form>
-</div>
+
 <div class="row">
     <div>
         <section>
@@ -82,8 +81,8 @@
             hours -= 12
         }//change to 12 hour time
 
-        if (seconds < 10) {
-            seconds = "0" + seconds
+        if (minutes < 10) {
+            minutes = "0" + minutes
         }
 
         var thetime = hours + ":" + minutes + " " + suffix //puts it all togther
