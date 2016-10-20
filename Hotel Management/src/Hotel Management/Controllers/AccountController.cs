@@ -65,6 +65,23 @@ namespace Hotel_Management.Controllers
                 {
                     _logger.LogInformation(1, "User logged in.");
                     return RedirectToLocal(returnUrl);
+                    
+                    /*The following code once the login is implemented means that when you login, it will go to the pages designed for each
+                    individual role rather than going to the default home page. This should work. can check once roles etc are setup*/
+
+                    /*if (User.IsInRole("Manager"))
+                    {
+                       return RedirectToAction("Tasks","Staff");
+                    }
+                    else if (User.IsInRole("Reception"))
+                    {
+                        return RedirectToAction("Booking", "Tasks");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Room", "Tasks");
+                    }*/
+                    
                 }
                 if (result.RequiresTwoFactor)
                 {
