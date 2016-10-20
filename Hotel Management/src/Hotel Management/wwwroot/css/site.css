@@ -1,4 +1,81 @@
-﻿/*Start of Bens CSS*/
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.glyphicon-large{
+    font-size: 8em;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 320px;
+}
+#timeOnIndex{
+    outline: none;
+    border:none;
+    display: block;
+    margin: 0 auto;
+    font-size:4em;
+    color:darkmagenta;
+    text-align:center;
+    background:rgba(255,255,255,0.5);
+}
+
+@media (min-width: 768px) {
+    .carousel-caption {
+        z-index: 10 !important;
+    }
+}
+
+/*controls tooltip pop up*/
+.tooltipgill {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltipgill .tooltiptextgill {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltipgill .tooltiptextgill::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltipgill:hover .tooltiptextgill {
+    visibility: visible;
+    opacity: 1;
+}
 
 /*  I have copied alot of the css from the main bootstrap css. The reason being i have changed
     some of the values for things like form-control etc and because they are used outside of 
@@ -156,86 +233,4 @@ textarea.form-control-login {
 }
 input[type="search"] {
   -webkit-appearance: none;
-}
-
-
-/*Start of Gills CSS*/
-
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.glyphicon-large{
-    font-size: 8em;
-}
-
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 320px;
-}
-#timeOnIndex{
-    outline: none;
-    border:none;
-    display: block;
-    margin: 0 auto;
-    font-size:4em;
-    color:darkmagenta;
-    text-align:center;
-    background:rgba(255,255,255,0.5);
-}
-
-@media (min-width: 768px) {
-    .carousel-caption {
-        z-index: 10 !important;
-    }
-}
-
-/*controls tooltip pop up*/
-.tooltipgill {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
-
-.tooltipgill .tooltiptextgill {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.tooltipgill .tooltiptextgill::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-.tooltipgill:hover .tooltiptextgill {
-    visibility: visible;
-    opacity: 1;
 }
