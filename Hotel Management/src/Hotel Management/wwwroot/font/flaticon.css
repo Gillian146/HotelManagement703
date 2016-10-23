@@ -1,0 +1,59 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 23/10/2016 06:58
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-bak-file-format-symbol:before { content: "\f100"; }
+.flaticon-book:before { content: "\f101"; }
+.flaticon-car:before { content: "\f102"; }
+.flaticon-check:before { content: "\f103"; }
+.flaticon-check-out:before { content: "\f104"; }
+.flaticon-clock:before { content: "\f105"; }
+.flaticon-commerce:before { content: "\f106"; }
+.flaticon-covered-food-tray-on-a-hand-of-hotel-room-service:before { content: "\f107"; }
+.flaticon-digital-phone:before { content: "\f108"; }
+.flaticon-door-key:before { content: "\f109"; }
+.flaticon-foursquare-button:before { content: "\f10a"; }
+.flaticon-guest:before { content: "\f10b"; }
+.flaticon-hotel-door-key:before { content: "\f10c"; }
+.flaticon-hotel-receptionist:before { content: "\f10d"; }
+.flaticon-info:before { content: "\f10e"; }
+.flaticon-information-sign:before { content: "\f10f"; }
+.flaticon-maid:before { content: "\f110"; }
+.flaticon-money:before { content: "\f111"; }
+.flaticon-notebook:before { content: "\f112"; }
+.flaticon-people:before { content: "\f113"; }
+.flaticon-people-1:before { content: "\f114"; }
+.flaticon-people-2:before { content: "\f115"; }
+.flaticon-sign:before { content: "\f116"; }
+.flaticon-sleeping:before { content: "\f117"; }
+.flaticon-square:before { content: "\f118"; }
+.flaticon-staff:before { content: "\f119"; }
+.flaticon-stairs:before { content: "\f11a"; }
+.flaticon-statistics:before { content: "\f11b"; }

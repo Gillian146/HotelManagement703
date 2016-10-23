@@ -4,9 +4,9 @@
 
 <div class="row">
     <div class="col-md-3 col-sm-6">
-        <h3 class="text-center">New Customer</h3>
+        <h3 class="text-center">New Guest</h3>
         <a asp-controller="CustomerGuest" asp-action="Create" class="btn btn-default btn-block">
-            <span class="glyphicon glyphicon-user g glyphicon-large" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-user  glyphicon-large" aria-hidden="true"></span>
         </a>
     </div>
     <div class="col-md-3 col-sm-6 ">
@@ -29,7 +29,18 @@
         </a>
     </div>
 </div>
-
+<div class="col-md-3 col-sm-6">
+    <h3 class="text-center">Guest Checking In</h3>
+    <a asp-controller="Alarm" asp-action="Create" class="btn btn-default btn-block">
+        <span class="glyphicon glyphicon-lock glyphicon-large" aria-hidden="true"></span>
+    </a>
+</div>
+<div class="col-md-3 col-sm-6">
+    <h3 class="text-center">Guest Checking Out</h3>
+    <a asp-controller="MessageAlert" asp-action="Create" class="btn btn-default btn-block">
+        <span class="glyphicon glyphicon-export glyphicon-large" aria-hidden="true"></span>
+    </a>
+</div>
     <div class="row">
         <div class="col-md-3 col-sm-6">
             <h3 class="text-center">Book Carpark</h3>
@@ -38,7 +49,7 @@
             </a>
         </div>
         <div class="col-md-3 col-sm-6">
-            <h3 class="text-center">Show Available Carpark</h3>
+            <h3 class="text-center">Available Carparks</h3>
             <a asp-controller="CarparkBooking" asp-action="Show" class="btn btn-default btn-block">
                 <span class="glyphicon glyphicon-calendar glyphicon-large" aria-hidden="true"></span>
             </a>
@@ -47,22 +58,22 @@
     <div class="row">
 
         <div class="col-md-3 col-sm-6">
-            <h3 class="text-center">In-House Today</h3>
-            <a asp-controller="Booking" asp-action="Index" class="btn btn-default btn-block">
+            <h3 class="text-center"></h3>
+            @*<a asp-controller="Booking" asp-action="Index" class="btn btn-default btn-block">
                 <span class="glyphicon glyphicon-check glyphicon-large" aria-hidden="true"></span>
-            </a>
+            </a>*@
         </div>
         <div class="col-md-3 col-sm-6 ">
-            <h3 class="text-center">Checking Out Today</h3>
-            <a asp-controller="Booking" asp-action="Index" class="btn btn-default btn-block">
+            <h3 class="text-center"></h3>
+            @*<a asp-controller="Booking" asp-action="Index" class="btn btn-default btn-block">
                 <span class="glyphicon glyphicon-share glyphicon-large" aria-hidden="true"></span>
-            </a>
+            </a>*@
         </div>
         <div class="col-md-3 col-sm-6">
-            <h3 class="text-center">In-House Tomorrow</h3>
-            <a asp-controller="Booking" asp-action="Index" class="btn btn-default btn-block">
+            <h3 class="text-center"></h3>
+            @*<a asp-controller="Booking" asp-action="Index" class="btn btn-default btn-block">
                 <span class="glyphicon glyphicon-play glyphicon-large" aria-hidden="true"></span>
-            </a>
+            </a>*@
         </div>
         <div class="col-md-3 col-sm-6">
             <h3 class="text-center">View All Bookings</h3>
@@ -108,6 +119,18 @@
         <a asp-controller="Booking" asp-action="Reports" class="btn btn-warning btn-block">
             <span class="glyphicon glyphicon-retweet glyphicon-large" aria-hidden="true"></span>
         </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center"></h3>
+        @*<a asp-controller="Maintenance" asp-action="Backup" class="btn btn-danger btn-block">
+            <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
+        </a>*@
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center"></h3>
+        @*<a asp-controller="Maintenance" asp-action="Backup" class="btn btn-danger btn-block">
+            <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
+        </a>*@
     </div>
     <div class="col-md-3 col-sm-6">
         <h3 class="text-center">Backup System</h3>
