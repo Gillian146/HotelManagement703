@@ -20,11 +20,13 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One Invoice can have many ChargeBacks
         //These two lines represent the many side
+        [Display(Name = "Invoice")]
         public int? InvoiceID { get; set; }
         public virtual Invoice Invoice { get; set; }
 
         //one to Many Relationship. One Customer can have many ChargeBacks
         //These two lines represent the many side
+        [Display(Name = "Guest")]
         public int? CustomerGuestID { get; set; }
         public virtual CustomerGuest CustomerGuest { get; set; }
     }

@@ -19,6 +19,7 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One hotel has many floors
         //These two lines represent the many side
+        [Display(Name = "Hotel")]
         public int? HotelID { get; set; }
         public virtual Hotel Hotel { get; set; }
 

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Authorization;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace Hotel_Management.Models
 {
@@ -9,6 +12,7 @@ namespace Hotel_Management.Models
     {
         public int ID { get; set; }
 
+        [Display(Name = "Guest Status")]
         public string  GuestStatusinRoom { get; set; }
 
         //one to Many Relationship. One Status can be on many Bookings

@@ -23,6 +23,7 @@ namespace Hotel_Management.Models
         //one to Many Relationship. One Hotel can have many Carparks
         //These two lines represent the many side
         //int? makes it optional (or able to be null) which is helpful when we key in the input - not a strict represntation of our ERD
+        [Display(Name = "Hotel")]
         public int? HotelID { get; set; }
         public virtual Hotel Hotel { get; set; }
 

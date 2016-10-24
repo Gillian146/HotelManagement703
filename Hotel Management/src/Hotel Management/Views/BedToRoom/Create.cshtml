@@ -1,42 +1,42 @@
-@model Hotel_Management.Models.CarparkBooking
+@model Hotel_Management.Models.BedToRoom
 
 @{
     ViewData["Title"] = "Create";
-    var CustomerGuestID = (IEnumerable<SelectListItem>)ViewData["CustomerGuestID"];
-    var CarparkID = (IEnumerable<SelectListItem>)ViewData["CarparkID"];
+    var RoomTypeID = (IEnumerable<SelectListItem>)ViewData["RoomTypeID"];
+    var BedTypeID = (IEnumerable<SelectListItem>)ViewData["BedTypeID"];
 }
 
 <h2>Create</h2>
 
 <form asp-action="Create">
     <div class="form-horizontal">
-        <h4>CarparkBooking</h4>
+        <h4>BedToRoom</h4>
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="CustomerGuestID" class="col-md-2 control-label"></label>
+            <label asp-for="RoomTypeID" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="CustomerGuestID" asp-items="CustomerGuestID" class="form-control">
+                <select asp-for="RoomTypeID" asp-items="RoomTypeID" class="form-control">
                     <option></option>
                 </select>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="CarparkID" class="col-md-2 control-label"></label>
+            <label asp-for="BedTypeID" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="CarparkID" asp-items="CarparkID" class="form-control">
+                <select asp-for="BedTypeID" asp-items="BedTypeID" class="form-control">
                     <option></option>
                 </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Quanitity" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Quanitity" class="form-control" />
+                <span asp-validation-for="Quanitity" class="text-danger" />
             </div>
         </div>
 
-        <div class="form-group">
-            <label asp-for="Date" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Date" id="datepicker1" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger" />
-            </div>
-        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-success" />
@@ -53,13 +53,4 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
-<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-<script>
-
-    $(function () {
-        $("#datepicker1").datepicker({ dateFormat: 'dd/mm/yy' }).datepicker("setDate", new Date());
-    });
-</script>
-
 }

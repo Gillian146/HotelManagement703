@@ -19,13 +19,13 @@
                 <span asp-validation-for="BookingID" class="text-danger" />
             </div>
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <label asp-for="CalendarID" class="control-label col-md-2">CalendarID</label>
             <div class="col-md-10">
                 <select asp-for="CalendarID" class="form-control" />
                 <span asp-validation-for="CalendarID" class="text-danger" />
             </div>
-        </div>
+        </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <div class="checkbox">
@@ -43,14 +43,14 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-success" />
             </div>
         </div>
     </div>
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-default" asp-action="Index">Back to Summary</a>
 </div>
 
 @section Scripts {

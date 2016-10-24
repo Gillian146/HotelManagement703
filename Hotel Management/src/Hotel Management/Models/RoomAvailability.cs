@@ -18,11 +18,13 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One Room has many Availbilites
         //These two lines represent the many side
+        [Display(Name = "Room")]
         public int? RoomID { get; set; }
         public virtual Room Room { get; set; }
 
         //one to Many Relationship. One Availbilites has many Room AvaialabilityDates
         //These two lines represent the many side
+        [Display(Name = "Availability")]
         public int? AvailabilityID { get; set; }
         public virtual Availability Availability { get; set; }
     }

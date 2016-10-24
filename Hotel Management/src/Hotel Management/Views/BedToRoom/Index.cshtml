@@ -1,18 +1,18 @@
-@model IEnumerable<Hotel_Management.Models.CheckInStatus>
+@model IEnumerable<Hotel_Management.Models.BedToRoom>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Check In Status</h2>
+<h2>Bed To Rooms</h2>
 
 <p>
-    <a class="btn btn-default" asp-action="Create">Create New</a>
+    <a  class="btn btn-default" asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.GuestStatusinRoom)
+            @Html.DisplayNameFor(model => model.Quanitity)
         </th>
         <th></th>
     </tr>
@@ -20,7 +20,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.GuestStatusinRoom)
+            @Html.DisplayFor(modelItem => item.Quanitity)
         </td>
         <td>
             <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

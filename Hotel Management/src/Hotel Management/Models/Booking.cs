@@ -32,16 +32,19 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One Customer can have many Bookings
         //These two lines represent the many side
+        [Display(Name = "Guest Name")]
         public int? CustomerGuestID { get; set; }
         public virtual CustomerGuest CustomerGuest { get; set; }
 
         //one to Many Relationship. One CreditCard can be used for many Bookings
         //These two lines represent the many side
+        [Display(Name = "Credit Card")]
         public int? CreditCardDetailsID { get; set; }
         public virtual CreditCardDetails CreditCardDetails { get; set; }
 
         //one to Many Relationship. One Invoice can have many Bookings
         //These two lines represent the many side
+        [Display(Name = "Invoice")]
         public int? InvoiceID { get; set; }
         public virtual Invoice Invoice { get; set; }
 
@@ -51,6 +54,7 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One Status can be on many Bookings
         //These two lines represent the many side
+        [Display(Name = "Checked In Status")]
         public int? CheckInStatusID { get; set; }
         public virtual CheckInStatus CheckInStatus { get; set; }
 

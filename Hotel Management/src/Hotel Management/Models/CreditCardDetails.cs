@@ -43,6 +43,7 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One Guest can have many CreditCards
         //These two lines represent the many side
+        [Display(Name = "Guest")]
         public int? CustomerGuestID { get; set; }
         public virtual CustomerGuest CustomerGuest { get; set; }
     }

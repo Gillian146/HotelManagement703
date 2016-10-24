@@ -22,11 +22,13 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One Floor has many Rooms
         //These two lines represent the many side
+        [Display(Name = "Floor")]
         public int? FloorID { get; set; }
         public virtual Floor Floor { get; set; }
 
         //one to Many Relationship. One RoomType has many Rooms
         //These two lines represent the many side
+        [Display(Name = "Room Type")]
         public int? RoomTypeID { get; set; }
         public virtual RoomType RoomType { get; set; }
 

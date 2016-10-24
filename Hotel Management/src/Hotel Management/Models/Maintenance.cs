@@ -29,11 +29,13 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One Staff can lodge  many Maintenance Requests
         //These two lines represent the many side
+        [Display(Name = "Staff")]
         public int? StaffID { get; set; }
         public virtual Staff Staff { get; set; }
 
         //one to Many Relationship. One Room can have  many Maintenance Requests
         //These two lines represent the many side
+        [Display(Name = "Room")]
         public int? RoomID { get; set; }
         public virtual Room Room { get; set; }
     }

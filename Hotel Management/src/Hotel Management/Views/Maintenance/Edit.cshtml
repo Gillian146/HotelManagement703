@@ -56,29 +56,29 @@
         <div class="form-group">
             <label asp-for="MaintenanceDescription" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="MaintenanceDescription" class="form-control" />
+                <textarea asp-for="MaintenanceDescription" rows="5" class="form-control"></textarea>
                 <span asp-validation-for="MaintenanceDescription" class="text-danger" />
             </div>
         </div>
-       
+
         <div class="form-group">
             <label asp-for="MaintenanceNotes" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="MaintenanceNotes" class="form-control" />
+                <textarea asp-for="MaintenanceNotes" rows="5" class="form-control"></textarea>
                 <span asp-validation-for="MaintenanceNotes" class="text-danger" />
             </div>
         </div>
        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-success" />
             </div>
         </div>
     </div>
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-default" asp-action="Index">Back to Summary</a>
 </div>
 
 @section Scripts {

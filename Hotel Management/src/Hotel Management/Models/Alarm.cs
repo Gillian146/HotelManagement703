@@ -35,6 +35,7 @@ namespace Hotel_Management.Models
         //one to Many Relationship. One Guest can request many Alarms
         //These two lines represent the many side
         //int? makes it optional (or able to be null) which is helpful when we key in the input - not a strict represntation of our ERD
+        [Display(Name = "Guest")]
         public int? CustomerGuestID { get; set; }
         public virtual CustomerGuest CustomerGuest { get; set; }
     }

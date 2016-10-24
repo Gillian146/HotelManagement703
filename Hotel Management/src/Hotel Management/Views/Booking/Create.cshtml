@@ -4,6 +4,7 @@
     ViewData["Title"] = "Create";
     var CustomerGuestID = (IEnumerable<SelectListItem>)ViewData["CustomerGuestID"];
     var CalendarToRoomID = (IEnumerable<SelectListItem>)ViewData["CalendarToRoomID"];
+    //var RoomTypeID = (IEnumerable<SelectListItem>)ViewData["RoomTypeID"];
 }
 
 <h2>Create</h2>
@@ -61,17 +62,24 @@
                 <span asp-validation-for="NumberofNights" class="text-danger" />
             </div>
         </div>
-       
+        @*<div class="form-group">
+            <label asp-for="RoomTypeID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="RoomTypeID" asp-items="RoomTypeID" class="form-control">
+                    <option></option>
+                </select>
+            </div>
+        </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </div>
     </div>
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-default" asp-action="Index">Back to Summary</a>
 </div>
 
 @section Scripts {

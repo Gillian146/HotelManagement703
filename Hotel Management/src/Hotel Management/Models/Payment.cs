@@ -22,11 +22,13 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One Invoice can have many Payments
         //These two lines represent the many side
+        [Display(Name = "Invoice")]
         public int? InvoiceID { get; set; }
         public virtual Invoice Invoice { get; set; }
 
         //one to Many Relationship. One CreditCard can have many Payments
         //These two lines represent the many side
+        [Display(Name = "Credit Card")]
         public int? CreditCardDetailsID { get; set; }
         public virtual CreditCardDetails CreditCardDetails { get; set; }
     }

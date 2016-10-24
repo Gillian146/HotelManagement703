@@ -1,4 +1,4 @@
-@model Hotel_Management.Models.Carpark
+@model Hotel_Management.Models.BedToRoom
 
 @{
     ViewData["Title"] = "Edit";
@@ -8,36 +8,29 @@
 
 <form asp-action="Edit">
     <div class="form-horizontal">
-        <h4>Carpark</h4>
+        <h4>BedToRoom</h4>
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="ID" />
         <div class="form-group">
-            <label asp-for="CarparkLocation" class="col-md-2 control-label"></label>
+            <label asp-for="BedTypeID" class="control-label col-md-2">BedTypeID</label>
             <div class="col-md-10">
-                <input asp-for="CarparkLocation" class="form-control" />
-                <span asp-validation-for="CarparkLocation" class="text-danger" />
+                <select asp-for="BedTypeID" class="form-control" />
+                <span asp-validation-for="BedTypeID" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="CarparkName" class="col-md-2 control-label"></label>
+            <label asp-for="Quanitity" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="CarparkName" class="form-control" />
-                <span asp-validation-for="CarparkName" class="text-danger" />
+                <input asp-for="Quanitity" class="form-control" />
+                <span asp-validation-for="Quanitity" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="CarparkNumber" class="col-md-2 control-label"></label>
+            <label asp-for="RoomTypeID" class="control-label col-md-2">RoomTypeID</label>
             <div class="col-md-10">
-                <input asp-for="CarparkNumber" class="form-control" />
-                <span asp-validation-for="CarparkNumber" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="HotelID" class="control-label col-md-2">HotelID</label>
-            <div class="col-md-10">
-                <select asp-for="HotelID" class="form-control" />
-                <span asp-validation-for="HotelID" class="text-danger" />
+                <select asp-for="RoomTypeID" class="form-control" />
+                <span asp-validation-for="RoomTypeID" class="text-danger" />
             </div>
         </div>
         <div class="form-group">

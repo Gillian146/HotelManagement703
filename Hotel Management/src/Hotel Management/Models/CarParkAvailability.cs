@@ -22,11 +22,13 @@ namespace Hotel_Management.Models
 
         //one to Many Relationship. One Carpark can have many Avalabilites on different Days (this might not work??)
         //These two lines represent the many side
+        [Display(Name = "Carpark")]
         public int? CarparkID { get; set; }
         public virtual Carpark Carpark { get; set; }
 
         //one to Many Relationship. One Avaiability can appear on many Associate entitiy (this might not work??)
         //These two lines represent the many side
+        [Display(Name = "Availability")]
         public int? AvailabilityID { get; set; }
         public virtual Availability Availability { get; set; }
     }

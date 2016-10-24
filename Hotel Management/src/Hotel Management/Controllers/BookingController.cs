@@ -55,6 +55,7 @@ namespace Hotel_Management.Controllers
             ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails");
             ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
             ViewData["CalendarToRoomID"] = new SelectList(_context.CalendarToRoom, "ID", "IsBooked");
+            //ViewData["RoomTypeID"] = new SelectList(_context.RoomType, "ID", "RoomTypeName");
             return View();
         }
 

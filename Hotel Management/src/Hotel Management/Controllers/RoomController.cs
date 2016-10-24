@@ -22,7 +22,7 @@ namespace Hotel_Management.Controllers
         // GET: Room
         public IActionResult Index()
         {
-            var applicationDbContext = _context.Room.Include(r => r.Floor);
+            var applicationDbContext = _context.Room.Include(r => r.Floor).Include(r => r.RoomType);
             return View(applicationDbContext.ToList());
         }
 
@@ -46,7 +46,8 @@ namespace Hotel_Management.Controllers
         // GET: Room/Create
         public IActionResult Create()
         {
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "FloorName");
+            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "FloorName");           
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomType, "ID", "RoomTypeName");
             return View();
         }
 
@@ -78,7 +79,9 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "Floor", room.FloorID);
+            ViewData["FloorID"] = new SelectList(_context.Floor, "ID", "FloorName");
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomType, "ID", "RoomTypeName");
+
             return View(room);
         }
 
