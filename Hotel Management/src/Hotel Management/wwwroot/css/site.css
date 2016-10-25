@@ -290,3 +290,6 @@ textarea {
     background-color: #4B0F54;
     border-color: #4B0F54; /*set the color you want here*/
 }
+.container{
+ background:rgba(255,255,255,0.75);
+}

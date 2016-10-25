@@ -36,6 +36,12 @@ namespace Hotel_Management.Models
         public int? CustomerGuestID { get; set; }
         public virtual CustomerGuest CustomerGuest { get; set; }
 
+        //one to Many Relationship. One Room Type can be on many Bookings
+        //These two lines represent the many side
+        [Display(Name = "Room Type")]
+        public int? RoomTypeID { get; set; }
+        public virtual RoomType RoomType { get; set; }
+
         //one to Many Relationship. One CreditCard can be used for many Bookings
         //These two lines represent the many side
         [Display(Name = "Credit Card")]

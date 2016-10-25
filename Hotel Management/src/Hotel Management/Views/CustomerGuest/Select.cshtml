@@ -1,0 +1,45 @@
+@model Hotel_Management.Models.CustomerGuest
+
+@{
+    ViewData["Title"] = "Details";
+    var CustomerGuestID = (IEnumerable<SelectListItem>)ViewData["CustomerGuestID"];
+}
+
+<h2>Please select a Guest </h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="CustomerFullName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="CustomerFullName" asp-items="CustomerGuestID" class="form-control">
+                    <option></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <table>
+                <tr>
+                    <th>xx</th>
+                    <th>xx</th>
+                    <th>zz</th>
+                </tr>
+                @foreach (var item in ViewData)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Value)</td>
+                    </tr>
+                }
+            </table>
+            @*<div class="col-md-offset-2 col-md-10">
+                    <a class="btn btn-default" asp-controller="CustomerGuest" asp-action="Details" asp-route-id="3" >View Their Bookings</a>
+                </div>*@
+        </div>
+    </div>
+</form>
+

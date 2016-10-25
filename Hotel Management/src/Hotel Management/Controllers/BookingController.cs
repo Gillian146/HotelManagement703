@@ -3,6 +3,7 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.Data.Entity;
 using Hotel_Management.Models;
+using System;
 
 namespace Hotel_Management.Controllers
 {
@@ -27,7 +28,16 @@ namespace Hotel_Management.Controllers
         // GET: Booking
         public IActionResult Index()
         {
-            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CreditCardDetails).Include(b => b.CustomerGuest).Include(b => b.Invoice).Include(b => b.CalendarToRoom);
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CreditCardDetails).Include(b => b.CustomerGuest).Include(b => b.Invoice).Include(b => b.CalendarToRoom).Include(b => b.RoomType).OrderBy(j=>j.ArrivalDate);
+            return View(applicationDbContext.ToList());
+        }
+        // GET: Booking
+        public IActionResult CheckIn()
+        {
+            
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CreditCardDetails)
+                .Include(b => b.CustomerGuest).Include(b => b.Invoice).Include(b => b.CalendarToRoom)
+                .Include(b => b.RoomType).Where(b=>b.ArrivalDate==(DateTime.Today)).Where(k=>k.CheckInStatus==null);
             return View(applicationDbContext.ToList());
         }
 
@@ -55,7 +65,7 @@ namespace Hotel_Management.Controllers
             ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails");
             ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
             ViewData["CalendarToRoomID"] = new SelectList(_context.CalendarToRoom, "ID", "IsBooked");
-            //ViewData["RoomTypeID"] = new SelectList(_context.RoomType, "ID", "RoomTypeName");
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomType, "ID", "RoomTypeName");
             return View();
         }
 
@@ -68,7 +78,7 @@ namespace Hotel_Management.Controllers
             {
                 _context.Booking.Add(booking);
                 _context.SaveChanges();
-                return RedirectToAction( "Create", "CalendarToRoom");
+                return RedirectToAction( "Create", "CreditCardDetails");
             }
             ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
             ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);
@@ -90,10 +100,11 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
-            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);
-            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", booking.CustomerGuestID);
-            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice", booking.InvoiceID);
+            ViewData["CheckInStatusID"] = new SelectList(_context.CheckInStatus, "ID", "GuestStatusatReception");
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails");
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
+            ViewData["CalendarToRoomID"] = new SelectList(_context.CalendarToRoom, "ID", "IsBooked");
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomType, "ID", "RoomTypeName");
             return View(booking);
         }
 

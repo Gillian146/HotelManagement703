@@ -12,8 +12,12 @@ namespace Hotel_Management.Models
     {
         public int ID { get; set; }
 
-        [Display(Name = "Guest Status")]
-        public string  GuestStatusinRoom { get; set; }
+        [Display(Name = "Guest at Reception")]
+        public string  GuestStatusatReception { get; set; }
+
+        [Display(Name = "Guest Status in Room")]
+        public string GuestStatusinRoom { get; set; }
+
 
         //one to Many Relationship. One Status can be on many Bookings
         //This is the 'one' side of the code required for that relationship

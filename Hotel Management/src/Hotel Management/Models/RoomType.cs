@@ -21,6 +21,10 @@ namespace Hotel_Management.Models
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<Room> Room { get; set; }
 
+        //one to Many Relationship. One Room Type can be on many Bookings
+        //This is the 'one' side of the code required for that relationship
+        public virtual ICollection<Booking> Booking { get; set; }
+
         //one to Many Relationship. One RoomType can have many Beds
         //This is the 'one' side of the code required for that relationship
         public virtual ICollection<BedToRoom> BedToRoom { get; set; }

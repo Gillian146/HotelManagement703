@@ -14,6 +14,9 @@
         <th>
             @Html.DisplayNameFor(model => model.GuestStatusinRoom)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuestStatusatReception)
+        </th>
         <th></th>
     </tr>
     
@@ -21,6 +24,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.GuestStatusinRoom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuestStatusatReception)
         </td>
         <td>
             <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
