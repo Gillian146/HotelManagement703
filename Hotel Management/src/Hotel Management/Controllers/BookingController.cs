@@ -32,12 +32,29 @@ namespace Hotel_Management.Controllers
             return View(applicationDbContext.ToList());
         }
         // GET: Booking
-        public IActionResult CheckIn()
+        public IActionResult IndexFuture()
+        {
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus)
+                .Include(b => b.CreditCardDetails).Include(b => b.CustomerGuest).Include(b => b.Invoice)
+                .Include(b => b.CalendarToRoom).Include(b => b.RoomType).OrderBy(j => j.ArrivalDate).Where(b => b.ArrivalDate >= (DateTime.Today) || b.DepartureDate >= (DateTime.Today));
+            return View(applicationDbContext.ToList());
+        }
+        // GET: Booking
+        public IActionResult Checkin()
         {
             
             var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CreditCardDetails)
                 .Include(b => b.CustomerGuest).Include(b => b.Invoice).Include(b => b.CalendarToRoom)
                 .Include(b => b.RoomType).Where(b=>b.ArrivalDate==(DateTime.Today)).Where(k=>k.CheckInStatus==null);
+            return View(applicationDbContext.ToList());
+        }
+        // GET: Booking
+        public IActionResult Checkout()
+        {
+
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CreditCardDetails)
+                .Include(b => b.CustomerGuest).Include(b => b.Invoice).Include(b => b.CalendarToRoom)
+                .Include(b => b.RoomType).Where(b => b.DepartureDate == (DateTime.Today)).Where(k => k.CheckInStatus == null || k.CheckInStatus.GuestStatusinRoom == "Checked In");
             return View(applicationDbContext.ToList());
         }
 
@@ -118,6 +135,82 @@ namespace Hotel_Management.Controllers
                 _context.Update(booking);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
+            }
+            ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", booking.CustomerGuestID);
+            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice", booking.InvoiceID);
+            return View(booking);
+        }
+        // GET: Booking/Edit/5
+        public IActionResult EditCheckin(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Booking booking = _context.Booking.Single(m => m.ID == id);
+            if (booking == null)
+            {
+                return HttpNotFound();
+            }
+            ViewData["CheckInStatusID"] = new SelectList(_context.CheckInStatus, "ID", "GuestStatusatReception");
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails");
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
+            ViewData["CalendarToRoomID"] = new SelectList(_context.CalendarToRoom, "ID", "IsBooked");
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomType, "ID", "RoomTypeName");
+            return View(booking);
+        }
+
+        // POST: Booking/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditCheckin(Booking booking)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(booking);
+                _context.SaveChanges();
+                return RedirectToAction("Checkin");
+            }
+            ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", booking.CustomerGuestID);
+            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice", booking.InvoiceID);
+            return View(booking);
+        }
+        // GET: Booking/Edit/5
+        public IActionResult EditCheckout(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Booking booking = _context.Booking.Single(m => m.ID == id);
+            if (booking == null)
+            {
+                return HttpNotFound();
+            }
+            ViewData["CheckInStatusID"] = new SelectList(_context.CheckInStatus, "ID", "GuestStatusatReception");
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails");
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
+            ViewData["CalendarToRoomID"] = new SelectList(_context.CalendarToRoom, "ID", "IsBooked");
+            ViewData["RoomTypeID"] = new SelectList(_context.RoomType, "ID", "RoomTypeName");
+            return View(booking);
+        }
+
+        // POST: Booking/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditCheckout(Booking booking)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(booking);
+                _context.SaveChanges();
+                return RedirectToAction("Checkout");
             }
             ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
             ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);

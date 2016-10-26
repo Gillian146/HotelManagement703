@@ -1,0 +1,123 @@
+@model Hotel_Management.Models.Booking
+
+@{
+    ViewData["Title"] = "Edit";
+    var CustomerGuestID = (IEnumerable<SelectListItem>)ViewData["CustomerGuestID"];
+    var CalendarToRoomID = (IEnumerable<SelectListItem>)ViewData["CalendarToRoomID"];
+    var RoomTypeID = (IEnumerable<SelectListItem>)ViewData["RoomTypeID"];
+    var CheckInStatusID = (IEnumerable<SelectListItem>)ViewData["CheckInStatusID"];
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Booking</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="CheckInStatusID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="CheckInStatusID" asp-items="CheckInStatusID" class="form-control">
+                    <option></option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BookingMade" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BookingMade" id="datepicker1" class="form-control" />
+
+                <span asp-validation-for="BookingMade" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerGuestID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="CustomerGuestID" asp-items="CustomerGuestID" class="form-control">
+                    <option></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ArrivalDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ArrivalDate" id="datepickerfrom" class="form-control" />
+                <span asp-validation-for="ArrivalDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DepartureDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DepartureDate" id="datepickerto" class="form-control" />
+                <span asp-validation-for="DepartureDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label asp-for="NumberofNights" class="col-md-2 control-label"></label><div id="label"></div>
+            <div class="col-md-10">
+                <input asp-for="NumberofNights" id="days"  class="form-control" />
+
+                <span asp-validation-for="NumberofNights" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="RoomTypeID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="RoomTypeID" asp-items="RoomTypeID" class="form-control">
+                    <option></option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a class="btn btn-default" asp-action="Index">Back to Summary</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script>
+
+    $(function () {
+        $("#datepicker1").datepicker({ dateFormat: 'dd/mm/yy' }).datepicker();
+        $("#datepickerfrom").datepicker({
+            //minDate: 0, when editing dont grey out previous dates
+            maxDate: '+1Y+6M',
+            dateFormat: 'dd/mm/yy',
+            onSelect: function (dateStr) {
+                var min = $(this).datepicker('getDate'); // Get selected date
+                $("#datepickerto").datepicker('option', 'minDate', min || '0'); // Set other min, default to today
+            }
+        });
+
+        $("#datepickerto").datepicker({
+            //minDate: '0',when editing dont grey out previous dates
+            maxDate: '+1Y+6M',
+            dateFormat: 'dd/mm/yy',
+            onSelect: function (dateStr) {
+                var max = $(this).datepicker('getDate'); // Get selected date
+                $('#datepicker').datepicker('option', 'maxDate', max || '+1Y+6M'); // Set other max, default to +18 months
+                var start = $("#datepickerfrom").datepicker("getDate");
+                var end = $("#datepickerto").datepicker("getDate");
+                var days = (end - start) / (1000 * 60 * 60 * 24);
+                $("#days").val(days);
+            }
+        });
+    });
+
+</script>
+}
