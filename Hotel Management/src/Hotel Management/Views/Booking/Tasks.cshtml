@@ -46,101 +46,103 @@
         View Bookings: Here you can add a new floor if for example a new floor is added to the hotel.
     </span>
 </div>
-<div class="col-md-3 col-sm-6">
-    <h3 class="text-center">Guest Checking In</h3>
-    <a asp-controller="Booking" asp-action="Checkin" class="btn btn-default btn-block">
-        <span class="glyphicon glyphicon-lock glyphicon-large" aria-hidden="true"></span>
-    </a>
-</div>
-<div class="col-md-3 col-sm-6">
-    <h3 class="text-center">Guest Checking Out</h3>
-    <a asp-controller="Booking" asp-action="Checkout" class="btn btn-default btn-block">
-        <span class="glyphicon glyphicon-export glyphicon-large" aria-hidden="true"></span>
-    </a>
-</div>
 <div class="row">
     <div class="col-md-3 col-sm-6">
-        <h3 class="text-center">Book Carpark</h3>
-        <a asp-controller="CarparkBooking" asp-action="Create" class="btn btn-default btn-block">
-            <span class="glyphicon glyphicon-road glyphicon-large" aria-hidden="true"></span>
+        <h3 class="text-center">Guest Checking In</h3>
+        <a asp-controller="Booking" asp-action="Checkin" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-lock glyphicon-large" aria-hidden="true"></span>
         </a>
     </div>
-    
     <div class="col-md-3 col-sm-6">
-        <h3 class="text-center">View Bookings</h3>
-        <a asp-controller="Booking" asp-action="IndexFuture" class="btn btn-default btn-block">
-            <span class="glyphicon glyphicon-calendar glyphicon-large" aria-hidden="true"></span>
+        <h3 class="text-center">Guest Checking Out</h3>
+        <a asp-controller="Booking" asp-action="Checkout" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-export glyphicon-large" aria-hidden="true"></span>
         </a>
     </div>
-</div>
-<div class="tooltipgill">
-    Help
-    <span class="tooltiptextgill">
-        Make Payment: Here is where you go when a guest is making a payment for their booking. By clicking summary you will find a list of all payments that have been made. <br /><br />
-        Request Invoice: Here you can request a invoice for a specific booking.<br /><br />
-        Add ChargeBack: Here you can add a chargeback for a booking.<br /><br />
-        Credit Card Details: Here you can add new details for a credit card to a guest. By clicking summary at the bottom of that menu you can change current credit card details for a guest.
-    </span>
-</div>
-<div class="row">
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <h3 class="text-center">Book Carpark</h3>
+            <a asp-controller="CarparkBooking" asp-action="Create" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-road glyphicon-large" aria-hidden="true"></span>
+            </a>
+        </div>
 
-    <div class="col-md-3 col-sm-6">
-        <h3 class="text-center">Make Payment</h3>
-        <a asp-controller="Payment" asp-action="Create" class="btn btn-success btn-block">
-            <span class="glyphicon glyphicon-usd glyphicon-large" aria-hidden="true"></span>
-        </a>
+        <div class="col-md-3 col-sm-6">
+            <h3 class="text-center">View Bookings</h3>
+            <a asp-controller="Booking" asp-action="IndexFuture" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-calendar glyphicon-large" aria-hidden="true"></span>
+            </a>
+        </div>
     </div>
-    <div class="col-md-3 col-sm-6 ">
-        <h3 class="text-center">Request Invoice</h3>
-        <a asp-controller="Invoice" asp-action="Index" class="btn btn-success btn-block">
-            <span class="glyphicon glyphicon-shopping-cart glyphicon-large" aria-hidden="true"></span>
-        </a>
+   </div>
+    <div class="tooltipgill">
+        Help
+        <span class="tooltiptextgill">
+            Make Payment: Here is where you go when a guest is making a payment for their booking. By clicking summary you will find a list of all payments that have been made. <br /><br />
+            Request Invoice: Here you can request a invoice for a specific booking.<br /><br />
+            Add ChargeBack: Here you can add a chargeback for a booking.<br /><br />
+            Credit Card Details: Here you can add new details for a credit card to a guest. By clicking summary at the bottom of that menu you can change current credit card details for a guest.
+        </span>
     </div>
-    <div class="col-md-3 col-sm-6">
-        <h3 class="text-center">Add ChargeBack</h3>
-        <a asp-controller="ChargeBack" asp-action="Create" class="btn btn-success btn-block">
-            <span class="glyphicon glyphicon-cutlery glyphicon-large" aria-hidden="true"></span>
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6">
-        <h3 class="text-center">Credit Card Details</h3>
-        <a asp-controller="CreditCardDetails" asp-action="Create" class="btn btn-success btn-block">
-            <span class="glyphicon glyphicon-credit-card glyphicon-large" aria-hidden="true"></span>
-        </a>
-    </div>
+    <div class="row">
 
-</div>
-<div class="tooltipgill">
-    Help
-    <span class="tooltiptextgill">
-        Run Daily Reports: Here you can run the daily reports for the hotel.  <br /><br />
-        Backup System: This is where you go when you need to backup the Hotel computer system including all records currently in the database.
-    </span>
-</div>
-<div class="row">
+        <div class="col-md-3 col-sm-6">
+            <h3 class="text-center">Make Payment</h3>
+            <a asp-controller="Payment" asp-action="Create" class="btn btn-success btn-block">
+                <span class="glyphicon glyphicon-usd glyphicon-large" aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+            <h3 class="text-center">Request Invoice</h3>
+            <a asp-controller="Invoice" asp-action="Index" class="btn btn-success btn-block">
+                <span class="glyphicon glyphicon-shopping-cart glyphicon-large" aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <h3 class="text-center">Add ChargeBack</h3>
+            <a asp-controller="ChargeBack" asp-action="Create" class="btn btn-success btn-block">
+                <span class="glyphicon glyphicon-cutlery glyphicon-large" aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <h3 class="text-center">Credit Card Details</h3>
+            <a asp-controller="CreditCardDetails" asp-action="Create" class="btn btn-success btn-block">
+                <span class="glyphicon glyphicon-credit-card glyphicon-large" aria-hidden="true"></span>
+            </a>
+        </div>
 
-    <div class="col-md-3 col-sm-6">
-        <h3 class="text-center">Run Daily Reports</h3>
-        <a asp-controller="Booking" asp-action="Reports" class="btn btn-warning btn-block">
-            <span class="glyphicon glyphicon-retweet glyphicon-large" aria-hidden="true"></span>
-        </a>
     </div>
-    <div class="col-md-3 col-sm-6">
-        <h3 class="text-center"></h3>
-        @*<a asp-controller="Maintenance" asp-action="Backup" class="btn btn-danger btn-block">
+    <div class="tooltipgill">
+        Help
+        <span class="tooltiptextgill">
+            Run Daily Reports: Here you can run the daily reports for the hotel.  <br /><br />
+            Backup System: This is where you go when you need to backup the Hotel computer system including all records currently in the database.
+        </span>
+    </div>
+    <div class="row">
+
+        <div class="col-md-3 col-sm-6">
+            <h3 class="text-center">Run Daily Reports</h3>
+            <a asp-controller="Booking" asp-action="Reports" class="btn btn-warning btn-block">
+                <span class="glyphicon glyphicon-retweet glyphicon-large" aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <h3 class="text-center"></h3>
+            @*<a asp-controller="Maintenance" asp-action="Backup" class="btn btn-danger btn-block">
+                    <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
+                </a>*@
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <h3 class="text-center"></h3>
+            @*<a asp-controller="Maintenance" asp-action="Backup" class="btn btn-danger btn-block">
+                    <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
+                </a>*@
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <h3 class="text-center">Backup System</h3>
+            <a asp-controller="Maintenance" asp-action="Backup" class="btn btn-danger btn-block">
                 <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
-            </a>*@
+            </a>
+        </div>
     </div>
-    <div class="col-md-3 col-sm-6">
-        <h3 class="text-center"></h3>
-        @*<a asp-controller="Maintenance" asp-action="Backup" class="btn btn-danger btn-block">
-                <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
-            </a>*@
-    </div>
-    <div class="col-md-3 col-sm-6">
-        <h3 class="text-center">Backup System</h3>
-        <a asp-controller="Maintenance" asp-action="Backup" class="btn btn-danger btn-block">
-            <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
-        </a>
-    </div>
-</div>
