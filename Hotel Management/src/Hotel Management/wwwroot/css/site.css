@@ -17,13 +17,14 @@
 }
 
 .navbar-inverse {
-   background: rgba(236,236,236, 0.7);
+   background: rgba(236,236,236, 0.05);
    font-size:large;
    border-bottom: none;
 }
 
 .navbar-inverse .navbar-nav > li > a {
     color: #457313;
+    text-align: center;
 }
 .navbar-inverse .navbar-nav > li > a:hover {
     color: #284D00;
@@ -33,6 +34,11 @@
     color: #bc44ef;
     background-color: #ffffff;
 }
+
+.navbar-brand {
+    color:black !important;
+}
+
 
 
 /*  Here is the css for the image. can easily be set to just be used for the main login page 
@@ -193,7 +199,7 @@ textarea {
     text-align:center;
     background:rgba(255,255,255,0.5);
     position: relative;
-    right: 25px;
+    right: 3px;
 }
 
 @media (min-width: 768px) {
@@ -211,22 +217,23 @@ textarea {
 
 .tooltipgill .tooltiptextgill {
     visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
+    width: 500px;
+    background-color: rgba(233,229,229,1);
+    color: black;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    bottom: 125%;
-    left: 50%;
+    /*bottom: 125%;
+    left: 50%;*/
     margin-left: -60px;
     opacity: 0;
     transition: opacity 1s;
 }
 
 .tooltipgill .tooltiptextgill::after {
+    padding-top:25px;
     content: "";
     position: absolute;
     top: 100%;

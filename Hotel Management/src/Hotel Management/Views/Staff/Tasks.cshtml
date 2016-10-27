@@ -1,7 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Management Processes";
 }
-
+<div class="tooltipgill">
+    Help
+    <span class="tooltiptextgill">
+        Staff: Here you can add/remove/edit details for current hotel staff. <br /><br />
+        Job Descriptions: Here is where you are able to see the current hourly rates and descriptions for job positions in the hotel. <br /><br />
+        System Users: Clicking this allows you to add a new user to the hotel.
+    </span>
+</div>
 <div class="row">
     <div class="col-md-3 col-sm-6">
         <h3 class="text-center">Staff</h3>
@@ -10,15 +17,15 @@
         </a>
     </div>
     @*<div class="col-md-3 col-sm-6 ">
-        <h3 class="text-center">Edit Staff</h3>
-        <a asp-controller="Staff" asp-action="Index" class="btn btn-default btn-block">
-            <span class="glyphicon glyphicon-edit glyphicon-large" aria-hidden="true"></span>
-        </a>
-    </div>*@
+            <h3 class="text-center">Edit Staff</h3>
+            <a asp-controller="Staff" asp-action="Index" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-edit glyphicon-large" aria-hidden="true"></span>
+            </a>
+        </div>*@
 
     <div class="col-md-3 col-sm-6">
         <h3 class="text-center">Job Descriptions</h3>
-        <a asp-controller="JobPosition" asp-action="Create" class="btn btn-default btn-block">
+        <a asp-controller="JobPosition" asp-action="Index" class="btn btn-default btn-block">
             <span class="glyphicon glyphicon-copy glyphicon-large" aria-hidden="true"></span>
         </a>
     </div>
@@ -28,6 +35,15 @@
             <span class="glyphicon glyphicon-log-in glyphicon-large" aria-hidden="true"></span>
         </a>
     </div>
+</div>
+<div class="tooltipgill">
+    Help
+    <span class="tooltiptextgill">
+        New Hotel: Here you can add a new hotel to the company by adding its name and location details.  <br /><br />
+        Rooms: Here you can add a new room to a floor, by going to the summary once in this menu you can see all rooms and change details specific to that room.<br /><br />
+        Carpark: Here you can add carparks to the hotel when new carparks are created.<br /><br />
+        Floors: Here you can add a new floor if for example a new floor is added to the hotel.<br />
+    </span>
 </div>
 <div class="row">
 
@@ -43,14 +59,14 @@
             <span class="glyphicon glyphicon-lamp glyphicon-large" aria-hidden="true"></span>
         </a>
     </div>
-   
-        <div class="col-md-3 col-sm-6">
-            <h3 class="text-center">Carpark</h3>
-            <a asp-controller="Carpark" asp-action="Create" class="btn btn-default btn-block">
-                <span class="glyphicon glyphicon-road glyphicon-large" aria-hidden="true"></span>
-            </a>
-        </div>
-   
+
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Carpark</h3>
+        <a asp-controller="Carpark" asp-action="Create" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-road glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+
     <div class="col-md-3 col-sm-6">
         <h3 class="text-center">Floors</h3>
         <a asp-controller="Floor" asp-action="Index" class="btn btn-default btn-block">
@@ -59,34 +75,41 @@
     </div>
 
 </div>
+<div class="tooltipgill">
+    Help
+    <span class="tooltiptextgill">
+        Reports: Here you can go to a menu that has a list of all of the reports in the hotel. <br /><br />
+        View All Bookings: Here you can see a list of all of the bookings in the hotel. <br /><br />
+        Backup System: This is where you go when you need to backup the Hotel computer system including all records currently in the database. 
+    </span>
+</div>
 
-    
-    <div class="row">
+<div class="row">
 
-        <div class="col-md-3 col-sm-6">
-            <h3 class="text-center">Reports</h3>
-            <a asp-controller="Booking" asp-action="Reports" class="btn btn-warning btn-block">
-                <span class="glyphicon glyphicon-retweet glyphicon-large" aria-hidden="true"></span>
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <h3 class="text-center">View All Bookings</h3>
-            <a asp-controller="Booking" asp-action="IndexFuture" class="btn btn-default btn-block">
-                <span class="glyphicon glyphicon-calendar glyphicon-large" aria-hidden="true"></span>
-            </a>
-        </div>
-           <div class="col-md-3 col-sm-6">
-            <h3 class="text-center"></h3>
-            @*<a asp-controller="Hotel" asp-action="Backup" class="btn btn-danger btn-block">
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Reports</h3>
+        <a asp-controller="Booking" asp-action="Reports" class="btn btn-warning btn-block">
+            <span class="glyphicon glyphicon-retweet glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">View All Bookings</h3>
+        <a asp-controller="Booking" asp-action="IndexFuture" class="btn btn-default btn-block">
+            <span class="glyphicon glyphicon-calendar glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center"></h3>
+        @*<a asp-controller="Hotel" asp-action="Backup" class="btn btn-danger btn-block">
                 <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
             </a>*@
-        </div>
- 
-        <div class="col-md-3 col-sm-6">
-            <h3 class="text-center">Backup System</h3>
-            <a asp-controller="Hotel" asp-action="Backup" class="btn btn-danger btn-block">
-                <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
-            </a>
-        </div>
     </div>
+
+    <div class="col-md-3 col-sm-6">
+        <h3 class="text-center">Backup System</h3>
+        <a asp-controller="Hotel" asp-action="Backup" class="btn btn-danger btn-block">
+            <span class="glyphicon glyphicon-alert glyphicon-large" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>
 

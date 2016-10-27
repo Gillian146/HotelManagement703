@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - Cook Hotel</title>
+        <title>@ViewData["Title"] - Bayside Hotel - Tomive Corperation</title>
 
         <environment names="Development">
             <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -30,16 +30,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">Cook Hotel</a>
+                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">Bayside Hotel - Tomive Corperation</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        @*<li><a asp-controller="Home" asp-action="Index">Home</a></li>*@
                         <li><a asp-controller="Staff" asp-action="Tasks">Management</a></li>
                         <li><a asp-controller="Booking" asp-action="Tasks">Reception</a></li>
                         <li><a asp-controller="Room" asp-action="Tasks">Housekeeping</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
                     </ul>
                     @await Html.PartialAsync("_LoginPartial")
                 </div>
