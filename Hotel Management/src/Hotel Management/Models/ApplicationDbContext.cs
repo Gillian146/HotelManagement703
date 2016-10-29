@@ -19,6 +19,7 @@ namespace Hotel_Management.Models
             builder.Entity<Staff>().Property(p => p.StaffFullName).HasComputedColumnSql("[StaffFirstName] + ' ' + [StaffLastName]");
             builder.Entity<CustomerGuest>().Property(p => p.CustomerFullName).HasComputedColumnSql("[CustomerFirstName] + ' ' + [CustomerLastName]");
             builder.Entity<Booking>().Property(p => p.BookingRange).HasComputedColumnSql("'Arrives:' + CONVERT(VARCHAR(10), [ArrivalDate], 103) + '- Departs:' + CONVERT(VARCHAR(10), [DepartureDate], 103) ");
+           // builder.Entity<Booking>().Property(p => p.BookingRef).HasComputedColumnSql("CONVERT(VARCHAR(10), [ArrivalDate], 12) ");
 
 
         }

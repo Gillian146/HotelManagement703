@@ -40,7 +40,14 @@ namespace Hotel_Management.Models
         [Display(Name = "Email")]
         public string CustomerEmail { get; set; }
 
-        //still need relationship with Carpark???
+        [Display(Name = "Notes or Preferences")]
+        public string CustomerNotes { get; set; }
+
+        //one to Many Relationship. One Company can have many Customer
+        //These two lines represent the many side
+        [Display(Name = "Company")]
+        public int? CompanyID { get; set; }
+        public virtual Company Company { get; set; }
 
 
         //one to Many Relationship. One Agency can have many Customer

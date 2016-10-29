@@ -30,6 +30,9 @@ namespace Hotel_Management.Models
         [Display(Name = "In and Out")]
         public string BookingRange { get; set; }
 
+        [Display(Name = "Booking Reference Number")]
+        public string BookingRef { get; set; }
+
         //one to Many Relationship. One Customer can have many Bookings
         //These two lines represent the many side
         [Display(Name = "Guest Name")]
@@ -63,6 +66,12 @@ namespace Hotel_Management.Models
         [Display(Name = "Checked In Status")]
         public int? CheckInStatusID { get; set; }
         public virtual CheckInStatus CheckInStatus { get; set; }
+
+        //one to Many Relationship. One Booking Method can be on many bookings
+        //These two lines represent the many side
+        [Display(Name = "Booking Method")]
+        public int? HowBookedID { get; set; }
+        public virtual HowBooked HowBooked { get; set; }
 
 
     }
