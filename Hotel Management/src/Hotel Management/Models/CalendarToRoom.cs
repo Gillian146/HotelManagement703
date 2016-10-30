@@ -10,7 +10,7 @@ namespace Hotel_Management.Models
     public class CalendarToRoom
     {
         public int ID { get; set; }
-        [Display(Name = "Please Reserve Room on this Date")]
+        [Display(Name = "Reserve Room on this Date")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BookRoom { get; set; }
 
