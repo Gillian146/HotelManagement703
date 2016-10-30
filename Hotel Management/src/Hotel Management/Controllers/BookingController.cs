@@ -32,6 +32,20 @@ namespace Hotel_Management.Controllers
             return View(applicationDbContext.ToList());
         }
         // GET: Booking
+        public IActionResult IndexToClean()
+        {
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CustomerGuest)
+                .Include(b => b.CalendarToRoom).Include(b => b.RoomType).Where(l => l.DepartureDate == (DateTime.Today));
+            return View(applicationDbContext.ToList());
+        }
+        // GET: Booking
+        public IActionResult IndexToService()
+        {
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CustomerGuest)
+                .Include(b => b.CalendarToRoom).Include(b => b.RoomType).Where(k => k.ArrivalDate < (DateTime.Today) && k.DepartureDate > (DateTime.Today));
+            return View(applicationDbContext.ToList());
+        }
+        // GET: Booking
         public IActionResult IndexFuture()
         {
             var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus)
@@ -95,7 +109,7 @@ namespace Hotel_Management.Controllers
             {
                 _context.Booking.Add(booking);
                 _context.SaveChanges();
-                return RedirectToAction( "Create", "CreditCardDetails");
+                return RedirectToAction( "Index", "Booking");
             }
             ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
             ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);
@@ -143,7 +157,7 @@ namespace Hotel_Management.Controllers
             return View(booking);
         }
         // GET: Booking/Edit/5
-        public IActionResult EditCheckin(int? id)
+        public IActionResult EditCheckIn(int? id)
         {
             if (id == null)
             {
@@ -166,13 +180,13 @@ namespace Hotel_Management.Controllers
         // POST: Booking/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditCheckin(Booking booking)
+        public IActionResult EditCheckIn(Booking booking)
         {
             if (ModelState.IsValid)
             {
                 _context.Update(booking);
                 _context.SaveChanges();
-                return RedirectToAction("Checkin");
+                return RedirectToAction("Create", "BedToRoom");
             }
             ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
             ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);

@@ -18,9 +18,11 @@ namespace Hotel_Management.Models
         public string MessageAlertMessage { get; set; }
 
         [Display(Name = "Date Message Received")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime MessageAlertDateReceived { get; set; }
 
         [Display(Name = "Date Message Delivered")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime MessageAlertDateDelivered { get; set; }
 
         [Display(Name = "Message Actioned")]

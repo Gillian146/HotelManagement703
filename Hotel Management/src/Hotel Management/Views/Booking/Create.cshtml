@@ -7,18 +7,23 @@
     var RoomTypeID = (IEnumerable<SelectListItem>)ViewData["RoomTypeID"];
 }
 
-<h2>Create</h2>
+<h2>Create New Booking</h2>
 
 
 <form asp-action="Create">
     <div class="form-horizontal">
-        <h4>Booking</h4>
+        
 
         @*This is the Help menu Code*@
         <div class="tooltipgill">
             Help
             <span class="tooltiptextgill">Please fill in all fields</span>
         </div>
+        <br />
+        <br />
+        <p>
+            <a class="btn btn-default" asp-controller="CustomerGuest" asp-action="Create">New Guest Details</a>
+        </p>
 
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
@@ -79,7 +84,7 @@
 </form>
 
 <div>
-    <a class="btn btn-default" asp-action="Index">Back to Summary</a>
+    <a class="btn btn-warning" asp-action="Index">Back to Summary</a>
 </div>
 
 @section Scripts {

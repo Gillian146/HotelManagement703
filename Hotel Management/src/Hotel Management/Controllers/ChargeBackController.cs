@@ -42,7 +42,7 @@ namespace Hotel_Management.Controllers
         // GET: ChargeBack/Create
         public IActionResult Create()
         {
-            ViewData["CustomerGuestID"] = new SelectList(_context.Set<CustomerGuest>(), "ID", "CustomerGuest");
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
             ViewData["InvoiceID"] = new SelectList(_context.Set<Invoice>(), "ID", "Invoice");
             return View();
         }
@@ -76,7 +76,7 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["CustomerGuestID"] = new SelectList(_context.Set<CustomerGuest>(), "ID", "CustomerGuest", chargeBack.CustomerGuestID);
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
             ViewData["InvoiceID"] = new SelectList(_context.Set<Invoice>(), "ID", "Invoice", chargeBack.InvoiceID);
             return View(chargeBack);
         }

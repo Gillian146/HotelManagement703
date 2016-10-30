@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    var CustomerGuestID = (IEnumerable<SelectListItem>)ViewData["CustomerGuestID"];
 }
 
 <h2>Create</h2>
@@ -28,15 +29,17 @@
         <div class="form-group">
             <label asp-for="CustomerGuestID" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="CustomerGuestID" class ="form-control"></select>
+                <select asp-for="CustomerGuestID" asp-items="CustomerGuestID" class="form-control">
+                    <option></option>
+                </select>
             </div>
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <label asp-for="InvoiceID" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <select asp-for="InvoiceID" class ="form-control"></select>
             </div>
-        </div>
+        </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-success" />
