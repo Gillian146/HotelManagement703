@@ -11,7 +11,7 @@ namespace Hotel_Management.Models
     {
         public int ID { get; set; }
 
-        [Display(Name = "Name")]
+        [Display(Name = "Job Title")]
         public string JobPositionName { get; set; }
 
         [Display(Name = "Hourly Rate")]

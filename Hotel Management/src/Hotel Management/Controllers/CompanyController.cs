@@ -6,23 +6,22 @@ using Hotel_Management.Models;
 
 namespace Hotel_Management.Controllers
 {
-    public class FloorController : Controller
+    public class CompanyController : Controller
     {
         private ApplicationDbContext _context;
 
-        public FloorController(ApplicationDbContext context)
+        public CompanyController(ApplicationDbContext context)
         {
             _context = context;    
         }
 
-        // GET: Floor
+        // GET: Company
         public IActionResult Index()
         {
-            var applicationDbContext = _context.Floor.Include(f => f.Hotel);
-            return View(applicationDbContext.ToList());
+            return View(_context.Company.ToList());
         }
 
-        // GET: Floor/Details/5
+        // GET: Company/Details/5
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -30,38 +29,36 @@ namespace Hotel_Management.Controllers
                 return HttpNotFound();
             }
 
-            Floor floor = _context.Floor.Single(m => m.ID == id);
-            if (floor == null)
+            Company company = _context.Company.Single(m => m.ID == id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
 
-            return View(floor);
+            return View(company);
         }
 
-        // GET: Floor/Create
+        // GET: Company/Create
         public IActionResult Create()
         {
-            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "HotelName");
             return View();
         }
 
-        // POST: Floor/Create
+        // POST: Company/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Floor floor)
+        public IActionResult Create(Company company)
         {
             if (ModelState.IsValid)
             {
-                _context.Floor.Add(floor);
+                _context.Company.Add(company);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "Hotel", floor.HotelID);
-            return View(floor);
+            return View(company);
         }
 
-        // GET: Floor/Edit/5
+        // GET: Company/Edit/5
         public IActionResult Edit(int? id)
         {
             if (id == null)
@@ -69,31 +66,29 @@ namespace Hotel_Management.Controllers
                 return HttpNotFound();
             }
 
-            Floor floor = _context.Floor.Single(m => m.ID == id);
-            if (floor == null)
+            Company company = _context.Company.Single(m => m.ID == id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            ViewData["HotelID"] = new SelectList(_context.Set<Hotel>(), "ID", "Hotel", floor.HotelID);
-            return View(floor);
+            return View(company);
         }
 
-        // POST: Floor/Edit/5
+        // POST: Company/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Floor floor)
+        public IActionResult Edit(Company company)
         {
             if (ModelState.IsValid)
             {
-                _context.Update(floor);
+                _context.Update(company);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["HotelID"] = new SelectList(_context.Set<Hotel>(), "ID", "Hotel", floor.HotelID);
-            return View(floor);
+            return View(company);
         }
 
-        // GET: Floor/Delete/5
+        // GET: Company/Delete/5
         [ActionName("Delete")]
         public IActionResult Delete(int? id)
         {
@@ -102,22 +97,22 @@ namespace Hotel_Management.Controllers
                 return HttpNotFound();
             }
 
-            Floor floor = _context.Floor.Single(m => m.ID == id);
-            if (floor == null)
+            Company company = _context.Company.Single(m => m.ID == id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
 
-            return View(floor);
+            return View(company);
         }
 
-        // POST: Floor/Delete/5
+        // POST: Company/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            Floor floor = _context.Floor.Single(m => m.ID == id);
-            _context.Floor.Remove(floor);
+            Company company = _context.Company.Single(m => m.ID == id);
+            _context.Company.Remove(company);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
