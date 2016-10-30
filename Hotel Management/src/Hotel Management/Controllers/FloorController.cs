@@ -57,7 +57,7 @@ namespace Hotel_Management.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["HotelID"] = new SelectList(_context.Hotel, "ID", "Hotel", floor.HotelID);
+            ViewData["HotelID"] = new SelectList(_context.Set<Hotel>(), "ID", "Hotel", floor.HotelID);
             return View(floor);
         }
 

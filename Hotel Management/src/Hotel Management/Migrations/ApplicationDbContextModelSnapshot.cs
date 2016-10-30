@@ -159,9 +159,7 @@ namespace Hotel_Management.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasAnnotation("Relational:GeneratedValueSql", "'Arrives:' + CONVERT(VARCHAR(10), [ArrivalDate], 103) + '- Departs:' + CONVERT(VARCHAR(10), [DepartureDate], 103) ");
 
-                    b.Property<string>("BookingRef")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasAnnotation("Relational:GeneratedValueSql", "[ID] ");
+                    b.Property<string>("BookingRef");
 
                     b.Property<int?>("CheckInStatusID");
 

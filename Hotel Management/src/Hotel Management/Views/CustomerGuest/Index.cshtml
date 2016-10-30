@@ -35,9 +35,7 @@
         <th>
             @Html.DisplayNameFor(model => model.CustomerEmail)
         </th>   
-        <th>
-            @Html.DisplayNameFor(model => model.CustomerNotes)
-        </th>  
+
 
         <th></th>
     </tr>
@@ -69,9 +67,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.CustomerEmail)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerNotes)
-        </td>  
+       
         <td>
             <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
            
@@ -80,6 +76,3 @@
     </tr>
 }
 </table>
-<p>
-    <a class="btn btn-warning" asp-controller="Booking" asp-action="Create">Make a Booking</a>
-</p>
