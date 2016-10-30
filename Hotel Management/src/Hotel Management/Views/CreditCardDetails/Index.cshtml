@@ -10,7 +10,9 @@
     <a class="btn btn-default" asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <tr>
+    <tr><th>
+    @Html.DisplayNameFor(model => model.CustomerGuest.CustomerFullName)
+</th>
         <th>
             @Html.DisplayNameFor(model => model.CreditCardNumber)
         </th>       
@@ -36,9 +38,11 @@
 {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CreditCardNumber)
+            @Html.DisplayFor(modelItem => item.CustomerGuest.CustomerFullName)
         </td>
-
+        <td>
+            @Html.DisplayFor(modelItem => item.CreditCardNumbers)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreditCardExpiryMonth)
         </td>

@@ -14,7 +14,9 @@
         <th>
             @Html.DisplayNameFor(model => model.AlarmDelivered)
         </th>
-       
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerGuest.CustomerFullName)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.AlarmDate)
         </th>
@@ -35,7 +37,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.AlarmDelivered)
         </td>
-       
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerGuest.CustomerFullName)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.AlarmDate)
         </td>

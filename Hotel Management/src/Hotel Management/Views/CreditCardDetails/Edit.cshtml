@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    var Guest = (IEnumerable<SelectListItem>)ViewData["CustomerGuestID"];
 }
 
 <h2>Edit</h2>
@@ -13,10 +14,18 @@
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="ID" />
         <div class="form-group">
-            <label asp-for="CreditCardCVC" class="col-md-2 control-label"></label>
+            <label asp-for="CustomerGuestID" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="CreditCardCVC" class="form-control" />
-                <span asp-validation-for="CreditCardCVC" class="text-danger" />
+                <select asp-for="CustomerGuestID" asp-items="Guest" class="form-control">
+                    <option></option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CreditCardNumbers" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreditCardNumbers" class="form-control" />
+                <span asp-validation-for="CreditCardNumbers" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -41,24 +50,18 @@
             </div>
         </div>
         <div class="form-group">
+            <label asp-for="CreditCardCVC" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CreditCardCVC" class="form-control" />
+                <span asp-validation-for="CreditCardCVC" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
             <label asp-for="CreditCardNotes" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="CreditCardNotes" class="form-control" />
                 <span asp-validation-for="CreditCardNotes" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CreditCardNumber" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="CreditCardNumber" class="form-control" />
-                <span asp-validation-for="CreditCardNumber" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="CustomerGuestID" class="control-label col-md-2">CustomerGuestID</label>
-            <div class="col-md-10">
-                <select asp-for="CustomerGuestID" class="form-control" />
-                <span asp-validation-for="CustomerGuestID" class="text-danger" />
             </div>
         </div>
         <div class="form-group">

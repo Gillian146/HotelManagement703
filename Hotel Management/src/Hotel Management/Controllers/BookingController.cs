@@ -113,7 +113,7 @@ namespace Hotel_Management.Controllers
             {
                 _context.Booking.Add(booking);
                 _context.SaveChanges();
-                return RedirectToAction( "Index", "Booking");
+                return RedirectToAction( "Create", "CreditCardDetails");
             }
             ViewData["CheckInStatusID"] = new SelectList(_context.Set<CheckInStatus>(), "ID", "CheckInStatus", booking.CheckInStatusID);
             ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails", booking.CreditCardDetailsID);

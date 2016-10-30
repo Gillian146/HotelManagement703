@@ -18,7 +18,10 @@ namespace Hotel_Management.Controllers
         {
             return View();
         }
-
+ public IActionResult HousekeepingReports()
+        {
+            return View();
+        }
         // GET: Room
         public IActionResult Index()
         {

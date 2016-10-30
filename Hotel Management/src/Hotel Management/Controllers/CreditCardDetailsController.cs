@@ -42,7 +42,7 @@ namespace Hotel_Management.Controllers
         // GET: CreditCardDetails/Create
         public IActionResult Create()
         {
-            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest.OrderByDescending(k => k.ID), "ID", "CustomerFullName");
             return View();
         }
 
@@ -55,7 +55,7 @@ namespace Hotel_Management.Controllers
             {
                 _context.CreditCardDetails.Add(creditCardDetails);
                 _context.SaveChanges();
-                return RedirectToAction( "Tasks", "Booking");
+                return RedirectToAction("Tasks", "Booking");
             }
             ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", creditCardDetails.CustomerGuestID);
             return View(creditCardDetails);
@@ -74,7 +74,7 @@ namespace Hotel_Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerGuest", creditCardDetails.CustomerGuestID);
+            ViewData["CustomerGuestID"] = new SelectList(_context.CustomerGuest, "ID", "CustomerFullName");
             return View(creditCardDetails);
         }
 

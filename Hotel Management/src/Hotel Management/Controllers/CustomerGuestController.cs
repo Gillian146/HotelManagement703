@@ -18,7 +18,7 @@ namespace Hotel_Management.Controllers
         // GET: CustomerGuest
         public IActionResult Index()
         {
-            var applicationDbContext = _context.CustomerGuest.Include(c => c.Agency).Include(c => c.Booking);
+            var applicationDbContext = _context.CustomerGuest.Include(c => c.Agency).Include(c => c.Booking).Include(c => c.Company);
             return View(applicationDbContext.ToList());
         }
 
@@ -43,7 +43,7 @@ namespace Hotel_Management.Controllers
         public IActionResult Create()
         {
             ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "AgencyName");
-            ViewData["CompanyID"] = new SelectList(_context.Agency, "ID", "CompanyName");
+            ViewData["CompanyID"] = new SelectList(_context.Company, "ID", "CompanyName");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace Hotel_Management.Controllers
             {
                 _context.CustomerGuest.Add(customerGuest);
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "CreditCardDetails");
             }
             ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "AgencyName");
             return View(customerGuest);

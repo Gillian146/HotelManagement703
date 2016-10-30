@@ -15,6 +15,9 @@ namespace Hotel_Management.Models
       
         public int CreditCardNumber { get; set; }
 
+        [Display(Name = "Credit Card Number")]
+        public int CreditCardNumbers { get; set; }
+
         [Display(Name = "Credit Card Expiry Month")]
         [Range(1, 12, ErrorMessage = "January is 01 etc")]
         public int CreditCardExpiryMonth { get; set; }
