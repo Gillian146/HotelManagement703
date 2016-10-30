@@ -3,12 +3,38 @@
 *@
 @{
 }
-<div class="row">
-    <div class="col-md-3 col-sm-6">
-        <h3 class="text-center">Backup in Progress...</h3>
-        <a class="btn btn-default" href='javascript:history.go(-1)'>Go Back to Previous Page
 
-            <span class="glyphicon glyphicon-menu-left glyphicon-large" aria-hidden="true"></span>
-        </a>
+
+<div class="row">
+    <h1 class="text-center">Click the button below to do a backup</h1>
+        @*<h3 class="text-center">Backup in Progress...</h3>*@
+        <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">
+        <div class="col-md-12 col-md-offset-3" >
+            
+            <input id="backupButton" class="backupDivbutton" type="button" name="backup" onclick="setTimeout(showdiv, 1500)" value="Backup" />
+        </div>
+        <div class="col-md-12 col-md-offset-2" >
+            <div id="backupDiv" style="display:none;" class="backupDiv">Backup Completed!</div>
+        </div>
+        <div class="col-md-12 col-md-offset-2">
+            <a class="btn btn-default" href='javascript:history.go(-1)'>
+                Go Back to Previous Page
+
+                <span class="glyphicon glyphicon-menu-left glyphicon-large" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3">
     </div>
 </div>
+
+<script>
+    function showdiv() {
+        document.getElementById("backupDiv").style.display = "";
+    }
+
+</script>
+
+
