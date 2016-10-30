@@ -300,3 +300,10 @@ textarea {
 .container{
  background:rgba(255,255,255,0.75);
 }
+.colouredline{
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 20px;
+    
+}

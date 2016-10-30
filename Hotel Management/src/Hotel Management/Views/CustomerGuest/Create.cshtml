@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Create";
     var AgencyID = (IEnumerable<SelectListItem>)ViewData["AgencyID"];
+    var CompanyID = (IEnumerable<SelectListItem>)ViewData["CompanyID"];
 }
 
 <h2>Create</h2>
@@ -71,15 +72,28 @@
         </div>
         <div class="form-group">
             <label  class="col-md-2 control-label">Agency Name (optional)</label>
-            <div class="col-md-9">
+            <div class="col-md-3">
                 <select asp-for="AgencyID" asp-items="AgencyID" class="form-control">
                     <option></option>
                 </select>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-offset-4 col-md-1">
+       
+       
+            <div class="col-md-1">
                 <a href="/Agency/Create" class="btn btn-default"><i class="glyphicon glyphicon-option-horizontal"></i></a>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Company Name (optional)</label>
+            <div class="col-md-3">
+                <select asp-for="CompanyID" asp-items="CompanyID" class="form-control">
+                    <option></option>
+                </select>
+            </div>
+
+
+            <div class="col-md-1">
+                <a href="/Company/Create" class="btn btn-default"><i class="glyphicon glyphicon-option-horizontal"></i></a>
             </div>
         </div>
         <div class="form-group">

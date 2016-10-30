@@ -43,6 +43,7 @@ namespace Hotel_Management.Controllers
         public IActionResult Create()
         {
             ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "AgencyName");
+            ViewData["CompanyID"] = new SelectList(_context.Agency, "ID", "CompanyName");
             return View();
         }
 

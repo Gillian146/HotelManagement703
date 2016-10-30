@@ -25,6 +25,10 @@ namespace Hotel_Management.Controllers
             return View();
         }
 
+        public IActionResult Printed()
+        {
+            return View();
+        }
         // GET: Booking
         public IActionResult Index()
         {

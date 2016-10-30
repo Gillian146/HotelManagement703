@@ -1,18 +1,18 @@
 @model Hotel_Management.Models.Booking
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Check In";
     var CustomerGuestID = (IEnumerable<SelectListItem>)ViewData["CustomerGuestID"];
     var CalendarToRoomID = (IEnumerable<SelectListItem>)ViewData["CalendarToRoomID"];
     var RoomTypeID = (IEnumerable<SelectListItem>)ViewData["RoomTypeID"];
     var CheckInStatusID = (IEnumerable<SelectListItem>)ViewData["CheckInStatusID"];
 }
 
-<h2>Edit</h2>
+<h2>Check In Guest on Arrival</h2>
 
 <form asp-action="Edit">
     <div class="form-horizontal">
-        <h4>Booking</h4>
+        
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="ID" />
@@ -81,7 +81,7 @@
 </form>
 
 <div>
-    <a class="btn btn-default" asp-action="Index">Back to Summary</a>
+    <a class="btn btn-warning" asp-action="Printed">Print Details for Signing</a>
 </div>
 
 @section Scripts {

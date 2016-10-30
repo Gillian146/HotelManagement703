@@ -47,5 +47,6 @@ namespace Hotel_Management.Models
         public DbSet<CalendarToRoom> CalendarToRoom { get; set; }
         public DbSet<CarparkBooking> CarparkBooking { get; set; }
         public DbSet<BedToRoom> BedToRoom { get; set; }
+        public DbSet<Company> Company { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.Data.Entity;
 using Hotel_Management.Models;
+using System;
 
 namespace Hotel_Management.Controllers
 {
@@ -27,7 +28,8 @@ namespace Hotel_Management.Controllers
         public IActionResult IndexToAction()
         {
             ///has undelievered at the top
-            var applicationDbContext = _context.Alarm.Include(a => a.CustomerGuest).OrderBy(u => u.AlarmDelivered).ThenBy(d => d.AlarmDate).Where(a=>a.AlarmDelivered.Equals(false));
+            var applicationDbContext = _context.Alarm.Include(a => a.CustomerGuest).OrderBy(u => u.AlarmDelivered).ThenBy(d => d.AlarmDate)
+                .Where(a=>a.AlarmDelivered.Equals(false) && a.AlarmDate == (DateTime.Today));
             return View(applicationDbContext.ToList());
         }
 

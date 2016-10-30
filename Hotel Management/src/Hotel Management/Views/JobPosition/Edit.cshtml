@@ -4,18 +4,26 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit Job Descriptions</h2>
 
 <form asp-action="Edit">
     <div class="form-horizontal">
-        <h4>JobPosition</h4>
+        
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="ID" />
+        
+        <div class="form-group">
+            <label asp-for="JobPositionName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="JobPositionName" class="form-control" />
+                <span asp-validation-for="JobPositionName" class="text-danger" />
+            </div>
+        </div>
         <div class="form-group">
             <label asp-for="JobDescription" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="JobDescription" class="form-control" />
+                <textarea asp-for="JobDescription" rows="5" class="form-control"></textarea>
                 <span asp-validation-for="JobDescription" class="text-danger" />
             </div>
         </div>
@@ -24,13 +32,6 @@
             <div class="col-md-10">
                 <input asp-for="JobPositionHourlyRate" class="form-control" />
                 <span asp-validation-for="JobPositionHourlyRate" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="JobPositionName" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="JobPositionName" class="form-control" />
-                <span asp-validation-for="JobPositionName" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
