@@ -12,34 +12,36 @@
     combination of colours
 */
 .navbar-default {
-    background-color:black;
-    border:none;
+    background-color: black;
+    border: none;
 }
 
 .navbar-inverse {
-   background: rgba(236,236,236, 0.05);
-   font-size:large;
-   border-bottom: none;
+    background: rgba(236,236,236, 0.05);
+    font-size: large;
+    border-bottom: none;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: #457313;
-    text-align: center;
-    font-size: larger;
-}
-.navbar-inverse .navbar-nav > li > a:hover {
-    color: #284D00;
-}
+    .navbar-inverse .navbar-nav > li > a {
+        color: #457313;
+        text-align: center;
+        font-size: large;
+    }
 
-.navbar-inverse .navbar-nav > .active > a{
-    color: #bc44ef;
-    background-color: #ffffff;
-}
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #284D00;
+        }
+
+    .navbar-inverse .navbar-nav > .active > a {
+        color: #bc44ef;
+        background-color: #ffffff;
+    }
 
 .navbar-brand {
-    color:black !important;
-    font-size: larger;
+    color: black !important;
+    font-size: large;
 }
+
 
 
 
@@ -51,120 +53,134 @@ body {
     background-image: url(../../images/hotel-front-changed2.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment:fixed;
+    background-attachment: fixed;
     background-size: cover;
     background-color: #464646;
 }
 
 /*Below is the css for the div in the login form with the logo in it*/
 .loginimage {
-    text-align:center;
-    padding-bottom:50px;
-    padding-top:50px;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
-.loginform{
-    background: rgba(220, 220, 220, 0.5); 
+.loginform {
+    background: rgba(220, 220, 220, 0.5);
 }
 
 /*Below is the css that has been copied from the bootstrap css, then manipulated for the
     specific login form 
 */
 
-.form-horizontal-login{
+.form-horizontal-login {
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
 
-.form-horizontal-login .radio,
-.form-horizontal-login .checkbox,
-.form-horizontal-login .radio-inline,
-.form-horizontal-login .checkbox-inline {
-  padding-top: 7px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.form-horizontal-login .radio,
-.form-horizontal-login .checkbox {
-  min-height: 27px;
-}
-.form-horizontal-login .form-group {
-  margin-right: -15px;
-  margin-left: -15px;
-}
+    .form-horizontal-login .radio,
+    .form-horizontal-login .checkbox,
+    .form-horizontal-login .radio-inline,
+    .form-horizontal-login .checkbox-inline {
+        padding-top: 7px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .form-horizontal-login .radio,
+    .form-horizontal-login .checkbox {
+        min-height: 27px;
+    }
+
+    .form-horizontal-login .form-group {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
 @media (min-width: 768px) {
-  .form-horizontal-login .control-label {
-    padding-top: 7px;
-    margin-bottom: 0;
-    text-align: right;
-  }
+    .form-horizontal-login .control-label {
+        padding-top: 7px;
+        margin-bottom: 0;
+        text-align: right;
+    }
 }
+
 .form-horizontal-login .has-feedback .form-control-login-feedback {
-  right: 15px;
+    right: 15px;
 }
+
 @media (min-width: 768px) {
-  .form-horizontal-login .form-group-lg .control-label {
-    padding-top: 14.333333px;
-    font-size: 18px;
-  }
+    .form-horizontal-login .form-group-lg .control-label {
+        padding-top: 14.333333px;
+        font-size: 18px;
+    }
 }
+
 @media (min-width: 768px) {
-  .form-horizontal-login .form-group-sm .control-label {
-    padding-top: 6px;
-    font-size: 12px;
-  }
+    .form-horizontal-login .form-group-sm .control-label {
+        padding-top: 6px;
+        font-size: 12px;
+    }
 }
 
 .form-control-login {
-  display: block;
-  width: 210px;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    display: block;
+    width: 210px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-.form-control-login:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-}
-.form-control-login::-moz-placeholder {
-  color: #999;
-  opacity: 1;
-}
-.form-control-login:-ms-input-placeholder {
-  color: #999;
-}
-.form-control-login::-webkit-input-placeholder {
-  color: #999;
-}
-.form-control-login[disabled],
-.form-control-login[readonly],
-fieldset[disabled] .form-control-login {
-  background-color: #eee;
-  opacity: 1;
-}
-.form-control-login[disabled],
-fieldset[disabled] .form-control-login {
-  cursor: not-allowed;
-}
+
+    .form-control-login:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    }
+
+    .form-control-login::-moz-placeholder {
+        color: #999;
+        opacity: 1;
+    }
+
+    .form-control-login:-ms-input-placeholder {
+        color: #999;
+    }
+
+    .form-control-login::-webkit-input-placeholder {
+        color: #999;
+    }
+
+    .form-control-login[disabled],
+    .form-control-login[readonly],
+    fieldset[disabled] .form-control-login {
+        background-color: #eee;
+        opacity: 1;
+    }
+
+    .form-control-login[disabled],
+    fieldset[disabled] .form-control-login {
+        cursor: not-allowed;
+    }
+
 textarea.form-control-login {
-  height: auto;
+    height: auto;
 }
+
 input[type="search"] {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 body {
@@ -172,21 +188,53 @@ body {
     padding-bottom: 20px;
 }
 
-.backupDiv{
+.backupDiv {
     font-size: x-large;
     text-align: center;
     margin: 50px;
-    margin-top:0px;
-    width:200px;
+    margin-top: 0px;
+    width: 200px;
 }
 
-.backupDivbutton{
-    text-align:center;
-    font-size:x-large;
+.backupDivbutton {
+    text-align: center;
+    font-size: x-large;
     margin: 50px;
-    width:113px;
+    width: 113px;
 }
 
+.MainIndexDiv {
+    outline: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(255,255,255,0);
+    position: relative;
+    right: 3px;
+    margin-top: 50px;
+}
+
+.MainIndexDiv a {
+    font-size:40px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0px;
+    font-weight: normal;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-user-select: none;
+    background-image: none;
+    border: 4px solid transparent;
+    border-radius: 4px;
+    color: white;
+    background-color: green;
+    border-color: green;
+    margin-top: 10px;
+}
 
 /*Gills CSS*/
 
@@ -197,7 +245,7 @@ body {
     padding-right: 15px;
 }
 
-.glyphicon-large{
+.glyphicon-large {
     font-size: 8em;
 }
 
@@ -207,15 +255,16 @@ select,
 textarea {
     max-width: 320px;
 }
-#timeOnIndex{
+
+#timeOnIndex {
     outline: none;
-    border:none;
+    border: none;
     display: block;
     margin: 0 auto;
-    font-size:4em;
-    color:darkmagenta;
-    text-align:center;
-    background:rgba(255,255,255,0.5);
+    font-size: 4em;
+    color: darkmagenta;
+    text-align: center;
+    background: rgba(255,255,255,0.5);
     position: relative;
     right: 3px;
 }
@@ -233,39 +282,39 @@ textarea {
     border-bottom: 1px dotted black;
 }
 
-.tooltipgill .tooltiptextgill {
-    visibility: hidden;
-    width: 500px;
-    background-color: rgba(233,229,229,1);
-    color: black;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    /*bottom: 125%;
+    .tooltipgill .tooltiptextgill {
+        visibility: hidden;
+        width: 500px;
+        background-color: rgba(233,229,229,1);
+        color: black;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        /*bottom: 125%;
     left: 50%;*/
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 1s;
-}
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 1s;
+    }
 
-.tooltipgill .tooltiptextgill::after {
-    padding-top:25px;
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
+        .tooltipgill .tooltiptextgill::after {
+            padding-top: 25px;
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
 
-.tooltipgill:hover .tooltiptextgill {
-    visibility: visible;
-    opacity: 1;
-}
+    .tooltipgill:hover .tooltiptextgill {
+        visibility: visible;
+        opacity: 1;
+    }
 /* CSS - Cascading Style Sheet */
 /* Palette color codes */
 /* Palette URL: http://paletton.com/#uid=32x0u0kllllaFw0g0qFqFg0w0aF */
@@ -275,23 +324,65 @@ textarea {
 
 /* As hex codes */
 
-.color-green-0 { color: #699A33 }	/* Main Primary color */
-.color-green-1 { color: #C2E79A }
-.color-green-2 { color: #92C060 }
-.color-green-3 { color: #457313 }
-.color-green-4 { color: #284D00 }
+.color-green-0 {
+    color: #699A33;
+}
+/* Main Primary color */
+.color-green-1 {
+    color: #C2E79A;
+}
 
-.color-brown-1-0 { color: #AA5239 }	/* Main Secondary color (1) */
-.color-brown-1-1 { color: #FFBDAA }
-.color-brown-1-2 { color: #D4826A }
-.color-brown-1-3 { color: #802D15 }
-.color-brown-1-4 { color: #551300 }
+.color-green-2 {
+    color: #92C060;
+}
 
-.color-purple-2-0 { color: #672770 }	/* Main Secondary color (2) */
-.color-purple-2-1 { color: #A171A7 }
-.color-purple-2-2 { color: #83478B }
-.color-purple-2-3 { color: #4B0F54 }
-.color-purple-2-4 { color: #310138 }
+.color-green-3 {
+    color: #457313;
+}
+
+.color-green-4 {
+    color: #284D00;
+}
+
+.color-brown-1-0 {
+    color: #AA5239;
+}
+/* Main Secondary color (1) */
+.color-brown-1-1 {
+    color: #FFBDAA;
+}
+
+.color-brown-1-2 {
+    color: #D4826A;
+}
+
+.color-brown-1-3 {
+    color: #802D15;
+}
+
+.color-brown-1-4 {
+    color: #551300;
+}
+
+.color-purple-2-0 {
+    color: #672770;
+}
+/* Main Secondary color (2) */
+.color-purple-2-1 {
+    color: #A171A7;
+}
+
+.color-purple-2-2 {
+    color: #83478B;
+}
+
+.color-purple-2-3 {
+    color: #4B0F54;
+}
+
+.color-purple-2-4 {
+    color: #310138;
+}
 
 
 /*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
@@ -300,28 +391,32 @@ textarea {
     background-color: #92C060;
     border-color: #92C060; /*set the color you want here*/
 }
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .btn-success:active:focus, .open>.dropdown-toggle.btn-success {
-    color: #fff;
-    background-color: #457313;
-    border-color: #457313; /*set the color you want here*/
-}
+
+    .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .btn-success:active:focus, .open > .dropdown-toggle.btn-success {
+        color: #fff;
+        background-color: #457313;
+        border-color: #457313; /*set the color you want here*/
+    }
+
 .btn-warning {
     color: #fff;
     background-color: #83478B;
     border-color: #83478B; /*set the color you want here*/
 }
-.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning:active:focus, .open>.dropdown-toggle.btn-warning {
-    color: #fff;
-    background-color: #4B0F54;
-    border-color: #4B0F54; /*set the color you want here*/
+
+    .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning:active:focus, .open > .dropdown-toggle.btn-warning {
+        color: #fff;
+        background-color: #4B0F54;
+        border-color: #4B0F54; /*set the color you want here*/
+    }
+
+.container {
+    background: rgba(255,255,255,0.75);
 }
-.container{
- background:rgba(255,255,255,0.75);
-}
-.colouredline{
-    width:100%;
-    margin-left:auto;
-    margin-right:auto;
+
+.colouredline {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 20px;
-    
 }

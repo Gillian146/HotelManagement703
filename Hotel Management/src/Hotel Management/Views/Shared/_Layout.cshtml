@@ -34,6 +34,22 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         @*<li><a asp-controller="Home" asp-action="Index">Home</a></li>*@
+                        @*
+                        @if (User.IsInRole("Manager"))
+                        {
+                            <li><a asp-controller="Staff" asp-action="Tasks">Management</a></li>
+                            <li><a asp-controller="Booking" asp-action="Tasks">Reception</a></li>
+                            <li><a asp-controller="Room" asp-action="Tasks">Housekeeping</a></li>
+                        }
+                        else if (User.IsInRole("Reception"))
+                        {
+                            <li><a asp-controller="Booking" asp-action="Tasks">Reception</a></li>
+                        }
+                        else
+                        {
+                            <li><a asp-controller="Room" asp-action="Tasks">Housekeeping</a></li>
+                        }
+                        *@
                         <li><a asp-controller="Staff" asp-action="Tasks">Management</a></li>
                         <li><a asp-controller="Booking" asp-action="Tasks">Reception</a></li>
                         <li><a asp-controller="Room" asp-action="Tasks">Housekeeping</a></li>
