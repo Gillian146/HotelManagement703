@@ -34,7 +34,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         @*<li><a asp-controller="Home" asp-action="Index">Home</a></li>*@
-                        @*
+                        
                         @if (User.IsInRole("Manager"))
                         {
                             <li><a asp-controller="Staff" asp-action="Tasks">Management</a></li>
@@ -45,15 +45,22 @@
                         {
                             <li><a asp-controller="Booking" asp-action="Tasks">Reception</a></li>
                         }
-                        else
+                        else if (User.IsInRole("Housekeeping"))
                         {
                             <li><a asp-controller="Room" asp-action="Tasks">Housekeeping</a></li>
                         }
-                        *@
+                        else
+                        {
+
+
+                        }
+
+                        @*
                         <li><a asp-controller="Staff" asp-action="Tasks">Management</a></li>
                         <li><a asp-controller="Booking" asp-action="Tasks">Reception</a></li>
                         <li><a asp-controller="Room" asp-action="Tasks">Housekeeping</a></li>
-                    </ul>
+                        *@                   
+                             </ul>
                     @await Html.PartialAsync("_LoginPartial")
                 </div>
             </div>
