@@ -2,21 +2,43 @@
     ViewData["Title"] = "Home Page";
 }
 
-    <form name="time">
+    <form name="time" style="margin-top: 50px;">
         <input type="text" id="timeOnIndex" name="time2" size=50>
 
     </form>
 
+<div class="MainIndexDiv">
 
+    @if (User.IsInRole("Manager"))
+    { 
+            <h2>To access specific management tasks use the link below</h2>
+            <a class="btn2"  asp-controller="Staff" asp-action="Tasks">Management</a>
+            <br />
+            <img src="~/images/line.png" class="img-responsive colouredline" alt="Dividing Line" />
+            <h2>To access tasks done by recepetion use the link below</h2>
+            <a class="btn2" asp-controller="Booking" asp-action="Tasks">Reception</a>
+            <br />
+            <img src="~/images/line.png" class="img-responsive colouredline" alt="Dividing Line" />
+            <h2>To access tasks done by housekeeping use the link below</h2>
+            <a class="btn2" asp-controller="Room" asp-action="Tasks">Housekeeping</a>
 
-    <div> Ben to organise display here</div>
-    <br />
+    }
+    else if (User.IsInRole("Reception"))
+    {
+            <a class="btn2" asp-controller="Booking" asp-action="Tasks">Reception</a>
+    }
+    else if(User.IsInRole("Housekeeping"))
+    {
+            <a class="btn2" asp-controller="Room" asp-action="Tasks">Housekeeping</a>
+    }
+    else
+    {
+        <h1>When you login you will see the fields that you need to see here</h1>
 
-    @*example code to duplicate into other index pages*@
-    <div class="tooltipgill">
-        Hover over me
-        <span class="tooltiptextgill">Tooltip text</span>
-    </div>
+    }
+
+</div>
+
 
 
 @*This controls the time*@

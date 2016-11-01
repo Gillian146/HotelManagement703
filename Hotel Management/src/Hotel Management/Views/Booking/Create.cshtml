@@ -8,17 +8,16 @@
 }
 
 <h2>Create New Booking</h2>
-
+<div class="tooltipgill" style="color:red">
+    Important!
+    <span class="tooltiptextgill">
+        Please ensure that all fields have been filled in before pressing create.
+    </span>
+</div>
 
 <form asp-action="Create">
     <div class="form-horizontal">
         
-
-        @*This is the Help menu Code*@
-        <div class="tooltipgill">
-            Help
-            <span class="tooltiptextgill">Please fill in all fields</span>
-        </div>
         <br />
         <br />
         <p>
@@ -85,6 +84,9 @@
 
 <div>
     <a class="btn btn-warning" asp-action="Index">Back to Summary</a>
+</div>
+<div>
+    <input type="button" value="Print" onclick="window.print()" class="btn btn-default" />
 </div>
 
 @section Scripts {

@@ -68,7 +68,6 @@ namespace Hotel_Management.Controllers
                     
                     /*The following code once the login is implemented means that when you login, it will go to the pages designed for each
                     individual role rather than going to the default home page. This should work. can check once roles etc are setup*/
-                    
                     /*
                     if (User.IsInRole("Manager"))
                     {
@@ -76,13 +75,14 @@ namespace Hotel_Management.Controllers
                     }         
                     else if (User.IsInRole("Reception"))
                     {
-                        return RedirectToAction("Booking", "Tasks");
+                        return RedirectToAction("Tasks", "Booking");
                     }
                     else
                     {
-                        return RedirectToAction("Room", "Tasks");
-                    }*/
-                    
+                        return RedirectToAction("Tasks", "Room");
+                    }
+                    */
+
                 }
                 if (result.RequiresTwoFactor)
                 {
