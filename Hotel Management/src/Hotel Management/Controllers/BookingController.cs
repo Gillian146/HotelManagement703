@@ -43,10 +43,23 @@ namespace Hotel_Management.Controllers
             return View(applicationDbContext.ToList());
         }
         // GET: Booking
+        public IActionResult IndexToday()
+        {
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CustomerGuest)
+                .Include(b => b.CalendarToRoom).Include(b => b.RoomType).Where(l => l.CheckInStatus.GuestStatusinRoom.Equals("Checked In"));
+            return View(applicationDbContext.ToList());
+        }
+        // GET: Booking
         public IActionResult IndexToService()
         {
             var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CustomerGuest)
                 .Include(b => b.CalendarToRoom).Include(b => b.RoomType).Where(k => k.ArrivalDate < (DateTime.Today) && k.DepartureDate > (DateTime.Today));
+            return View(applicationDbContext.ToList());
+        }
+        public IActionResult IndexDeparting()
+        {
+            var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus).Include(b => b.CustomerGuest)
+                .Include(b => b.CalendarToRoom).Include(b => b.RoomType).Where(k => k.DepartureDate.Equals(DateTime.Today));
             return View(applicationDbContext.ToList());
         }
         // GET: Booking
@@ -54,7 +67,7 @@ namespace Hotel_Management.Controllers
         {
             var applicationDbContext = _context.Booking.Include(b => b.CheckInStatus)
                 .Include(b => b.CreditCardDetails).Include(b => b.CustomerGuest).Include(b => b.Invoice)
-                .Include(b => b.CalendarToRoom).Include(b => b.RoomType).OrderBy(j => j.ArrivalDate).Where(b => b.ArrivalDate >= (DateTime.Today) || b.DepartureDate >= (DateTime.Today));
+                .Include(b => b.CalendarToRoom).Include(b => b.RoomType).OrderBy(j => j.ArrivalDate).Where(k => k.ArrivalDate < (DateTime.Today) && k.DepartureDate > (DateTime.Today.AddDays(1)));
             return View(applicationDbContext.ToList());
         }
         // GET: Booking

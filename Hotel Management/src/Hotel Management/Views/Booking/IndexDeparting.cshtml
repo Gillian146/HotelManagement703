@@ -1,0 +1,74 @@
+@model IEnumerable<Hotel_Management.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Booking</h2>
+
+<p>
+    <a class="btn btn-default" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingMade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerGuest.CustomerFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomType.RoomTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckInStatusID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberofNights)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingMade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerGuest.CustomerFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomType.RoomTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckInStatus.GuestStatusinRoom)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberofNights)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+
+            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+        </td>
+    </tr>
+}
+</table>
+<div>
+    <input type="button" value="Print" onclick="window.print()" class="btn btn-default" />
+</div>

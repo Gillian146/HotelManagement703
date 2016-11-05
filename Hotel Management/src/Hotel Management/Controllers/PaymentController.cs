@@ -42,8 +42,8 @@ namespace Hotel_Management.Controllers
         // GET: Payment/Create
         public IActionResult Create()
         {
-            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardDetails");
-            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "Invoice");
+            ViewData["CreditCardDetailsID"] = new SelectList(_context.CreditCardDetails, "ID", "CreditCardNumbers");
+            ViewData["InvoiceID"] = new SelectList(_context.Invoice, "ID", "ID");
             return View();
         }
 

@@ -56,7 +56,7 @@ namespace Hotel_Management.Controllers
             {
                 _context.CustomerGuest.Add(customerGuest);
                 _context.SaveChanges();
-                return RedirectToAction("Create", "CreditCardDetails");
+                return RedirectToAction("Create", "Booking");
             }
             ViewData["AgencyID"] = new SelectList(_context.Agency, "ID", "AgencyName");
             return View(customerGuest);
