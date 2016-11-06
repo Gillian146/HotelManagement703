@@ -18,7 +18,7 @@
         <div class="form-group">
             <label asp-for="DatePrepared" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="DatePrepared" class="form-control" />
+                <input asp-for="DatePrepared" id="datepicker1" class="form-control" />
                 <span asp-validation-for="DatePrepared" class="text-danger" />
             </div>
         </div>
@@ -52,4 +52,14 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script>
+
+    $(function () {
+        $("#datepicker1").datepicker({ dateFormat: 'dd/mm/yy' }).datepicker("setDate", new Date());
+       
+    });
+
+</script>
 }

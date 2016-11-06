@@ -18,6 +18,7 @@ namespace Hotel_Management.Models
         public double GSTRate { get; set; }
 
         [Display(Name = "Date Invoice Prepared")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DatePrepared { get; set; }
 
         [Display(Name = "GST Included")]
